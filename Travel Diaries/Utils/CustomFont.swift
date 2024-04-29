@@ -7,12 +7,13 @@
 
 import SwiftUI
 
-struct CustomFont: View {
-    var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
-    }
+enum Fonts: String {
+    case poppins = "Poppins-Regular"
+    case frosting = "FROSTINGBWPERSONALUSE-Bold"
 }
 
-#Preview {
-    CustomFont()
+extension Font {
+    static func customFont(_ font: Fonts, size: CGFloat) -> Font {
+        return Font.custom(font.rawValue, size: size)
+    }
 }

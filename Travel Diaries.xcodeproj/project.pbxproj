@@ -7,6 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4A58DA552BE02208005C962D /* CountryDictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A58DA542BE02208005C962D /* CountryDictionary.swift */; };
+		4A58DA582BE024E8005C962D /* frosting.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4A58DA572BE024E8005C962D /* frosting.ttf */; };
+		4A58DA5C2BE02602005C962D /* CustomFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A58DA5B2BE02602005C962D /* CustomFont.swift */; };
+		4A58DA5E2BE02640005C962D /* Poppins-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4A58DA5D2BE02640005C962D /* Poppins-Regular.ttf */; };
+		4A58DA642BE036F0005C962D /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 4A58DA632BE036F0005C962D /* FirebaseAuth */; };
+		4A58DA662BE03727005C962D /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 4A58DA652BE03727005C962D /* FirebaseAnalytics */; };
+		4A58DA682BE03727005C962D /* FirebaseAnalyticsSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 4A58DA672BE03727005C962D /* FirebaseAnalyticsSwift */; };
+		4A58DA6A2BE03727005C962D /* FirebaseAppCheck in Frameworks */ = {isa = PBXBuildFile; productRef = 4A58DA692BE03727005C962D /* FirebaseAppCheck */; };
+		4A58DA6C2BE03727005C962D /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = 4A58DA6B2BE03727005C962D /* FirebaseCrashlytics */; };
+		4A58DA6F2BE038F2005C962D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4A58DA6E2BE038F2005C962D /* GoogleService-Info.plist */; };
+		4A58DA722BE0396A005C962D /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A58DA712BE0396A005C962D /* LoginViewModel.swift */; };
 		4AC133802BDD800D00FD1B58 /* Travel_DiariesApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AC1337F2BDD800D00FD1B58 /* Travel_DiariesApp.swift */; };
 		4AC133822BDD800D00FD1B58 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AC133812BDD800D00FD1B58 /* ContentView.swift */; };
 		4AC133842BDD800F00FD1B58 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4AC133832BDD800F00FD1B58 /* Assets.xcassets */; };
@@ -16,6 +27,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4A58DA542BE02208005C962D /* CountryDictionary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryDictionary.swift; sourceTree = "<group>"; };
+		4A58DA572BE024E8005C962D /* frosting.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = frosting.ttf; sourceTree = "<group>"; };
+		4A58DA592BE0256E005C962D /* Travel-Diaries-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Travel-Diaries-Info.plist"; sourceTree = SOURCE_ROOT; };
+		4A58DA5B2BE02602005C962D /* CustomFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomFont.swift; sourceTree = "<group>"; };
+		4A58DA5D2BE02640005C962D /* Poppins-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Regular.ttf"; sourceTree = "<group>"; };
+		4A58DA6E2BE038F2005C962D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		4A58DA712BE0396A005C962D /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		4AC1337C2BDD800D00FD1B58 /* Travel Diaries.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Travel Diaries.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4AC1337F2BDD800D00FD1B58 /* Travel_DiariesApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Travel_DiariesApp.swift; sourceTree = "<group>"; };
 		4AC133812BDD800D00FD1B58 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -30,18 +48,66 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4A58DA6A2BE03727005C962D /* FirebaseAppCheck in Frameworks */,
+				4A58DA682BE03727005C962D /* FirebaseAnalyticsSwift in Frameworks */,
+				4A58DA6C2BE03727005C962D /* FirebaseCrashlytics in Frameworks */,
+				4A58DA662BE03727005C962D /* FirebaseAnalytics in Frameworks */,
+				4A58DA642BE036F0005C962D /* FirebaseAuth in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4A58DA562BE024DC005C962D /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				4A58DA572BE024E8005C962D /* frosting.ttf */,
+				4A58DA5D2BE02640005C962D /* Poppins-Regular.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		4A58DA5A2BE025EA005C962D /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				4A58DA542BE02208005C962D /* CountryDictionary.swift */,
+				4A58DA5B2BE02602005C962D /* CustomFont.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		4A58DA622BE036F0005C962D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		4A58DA6D2BE0374D005C962D /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				4A58DA702BE0394F005C962D /* presentation */,
+				4A58DA712BE0396A005C962D /* LoginViewModel.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		4A58DA702BE0394F005C962D /* presentation */ = {
+			isa = PBXGroup;
+			children = (
+				4AC133812BDD800D00FD1B58 /* ContentView.swift */,
+			);
+			path = presentation;
+			sourceTree = "<group>";
+		};
 		4AC133732BDD800C00FD1B58 = {
 			isa = PBXGroup;
 			children = (
 				4AC1338F2BDD9B8B00FD1B58 /* avatar3.usdz */,
 				4AC1337E2BDD800D00FD1B58 /* Travel Diaries */,
 				4AC1337D2BDD800D00FD1B58 /* Products */,
+				4A58DA622BE036F0005C962D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -56,8 +122,12 @@
 		4AC1337E2BDD800D00FD1B58 /* Travel Diaries */ = {
 			isa = PBXGroup;
 			children = (
+				4A58DA6E2BE038F2005C962D /* GoogleService-Info.plist */,
+				4A58DA592BE0256E005C962D /* Travel-Diaries-Info.plist */,
+				4A58DA562BE024DC005C962D /* Fonts */,
+				4A58DA5A2BE025EA005C962D /* Utils */,
+				4A58DA6D2BE0374D005C962D /* Login */,
 				4AC1337F2BDD800D00FD1B58 /* Travel_DiariesApp.swift */,
-				4AC133812BDD800D00FD1B58 /* ContentView.swift */,
 				4AC133912BDDA1E400FD1B58 /* AvatarViewer.swift */,
 				4AC133832BDD800F00FD1B58 /* Assets.xcassets */,
 				4AC133852BDD800F00FD1B58 /* Preview Content */,
@@ -89,6 +159,13 @@
 			dependencies = (
 			);
 			name = "Travel Diaries";
+			packageProductDependencies = (
+				4A58DA632BE036F0005C962D /* FirebaseAuth */,
+				4A58DA652BE03727005C962D /* FirebaseAnalytics */,
+				4A58DA672BE03727005C962D /* FirebaseAnalyticsSwift */,
+				4A58DA692BE03727005C962D /* FirebaseAppCheck */,
+				4A58DA6B2BE03727005C962D /* FirebaseCrashlytics */,
+			);
 			productName = "Travel Diaries";
 			productReference = 4AC1337C2BDD800D00FD1B58 /* Travel Diaries.app */;
 			productType = "com.apple.product-type.application";
@@ -117,6 +194,9 @@
 				Base,
 			);
 			mainGroup = 4AC133732BDD800C00FD1B58;
+			packageReferences = (
+				4A58DA612BE036D0005C962D /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			productRefGroup = 4AC1337D2BDD800D00FD1B58 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -131,9 +211,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4A58DA582BE024E8005C962D /* frosting.ttf in Resources */,
+				4A58DA6F2BE038F2005C962D /* GoogleService-Info.plist in Resources */,
 				4AC133872BDD800F00FD1B58 /* Preview Assets.xcassets in Resources */,
 				4AC133902BDD9B8B00FD1B58 /* avatar3.usdz in Resources */,
 				4AC133842BDD800F00FD1B58 /* Assets.xcassets in Resources */,
+				4A58DA5E2BE02640005C962D /* Poppins-Regular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -144,6 +227,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4A58DA5C2BE02602005C962D /* CustomFont.swift in Sources */,
+				4A58DA552BE02208005C962D /* CountryDictionary.swift in Sources */,
+				4A58DA722BE0396A005C962D /* LoginViewModel.swift in Sources */,
 				4AC133822BDD800D00FD1B58 /* ContentView.swift in Sources */,
 				4AC133802BDD800D00FD1B58 /* Travel_DiariesApp.swift in Sources */,
 				4AC133922BDDA1E400FD1B58 /* AvatarViewer.swift in Sources */,
@@ -283,6 +369,7 @@
 				DEVELOPMENT_TEAM = X9QZ4KQXLR;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Travel-Diaries-Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -313,6 +400,7 @@
 				DEVELOPMENT_TEAM = X9QZ4KQXLR;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Travel-Diaries-Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -354,6 +442,45 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		4A58DA612BE036D0005C962D /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.24.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		4A58DA632BE036F0005C962D /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4A58DA612BE036D0005C962D /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		4A58DA652BE03727005C962D /* FirebaseAnalytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4A58DA612BE036D0005C962D /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalytics;
+		};
+		4A58DA672BE03727005C962D /* FirebaseAnalyticsSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4A58DA612BE036D0005C962D /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalyticsSwift;
+		};
+		4A58DA692BE03727005C962D /* FirebaseAppCheck */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4A58DA612BE036D0005C962D /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAppCheck;
+		};
+		4A58DA6B2BE03727005C962D /* FirebaseCrashlytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4A58DA612BE036D0005C962D /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseCrashlytics;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 4AC133742BDD800C00FD1B58 /* Project object */;
 }
