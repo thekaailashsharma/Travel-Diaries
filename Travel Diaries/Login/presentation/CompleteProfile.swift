@@ -32,7 +32,7 @@ struct CompleteProfile: View {
                             authManager.startAuth(phoneNumber: "+\(getCountryCode(countryCode))\(phoneNumber)") { value in
                                 isLoading = false
                                 if value {
-                                    withAnimation(.spring.delay(1)) {
+                                    withAnimation(.spring.delay(0.5)) {
                                         currentProfileScreen = .otp
                                     }
                                 }
@@ -49,7 +49,7 @@ struct CompleteProfile: View {
                                 if value {
                                     authManager.getLoginStatus()
                                     print("Hurray")
-                                    withAnimation(.spring.delay(1)) {
+                                    withAnimation(.spring.delay(0.5)) {
                                         currentProfileScreen = .username
                                     }
                                     
