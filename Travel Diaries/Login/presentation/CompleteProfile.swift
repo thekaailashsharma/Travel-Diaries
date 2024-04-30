@@ -11,13 +11,15 @@ struct CompleteProfile: View {
     
     @EnvironmentObject var authManager: AuthManager
     
+    @StateObject var loginViewModel = LoginViewModel()
+    
     @State var phoneNumber: String = ""
     @State var countryCode: String = "IN"
     @State var smsCode: String = ""
     @State var userName: String = ""
     @State var progressText: String = "You will be redirected !!"
     @State var isLoading: Bool = false
-    @State var currentProfileScreen: CompleteProfileValues = .phoneNumber
+    @State var currentProfileScreen: CompleteProfileValues = .username
     
     var body: some View {
         NavigationStack {
@@ -63,6 +65,12 @@ struct CompleteProfile: View {
                         .padding()
                     case .username:
                         CustomTextField(textValue: $userName, keyboardType: .default, label: "Enter Username") {
+                            
+                            if loginViewModel.allUsersNames.contains(where: {$0.userName == userName}) {
+                                print("UserName is Found")
+                            } else {
+                                print("UserName is Not Found")
+                            }
                             
                         }
                         .transition(.slide)

@@ -7,7 +7,11 @@
 
 import Foundation
 
-struct User: Codable, Identifiable {
+struct UserNames: Codable {
+    let userName: String
+}
+
+struct UserInfo: Codable, Identifiable {
     let id: UUID
     let phoneNumber: String
     let userName: String
@@ -24,6 +28,7 @@ enum Gender: String, Codable {
     case female = "Female"
     case other = "Other"
 }
+
 struct TravelQuestions: Codable {
     enum AboutMeSection: String, CaseIterable {
         case winMeOver = "The way to win me over is"

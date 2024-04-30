@@ -7,6 +7,34 @@
 
 import SwiftUI
 import FirebaseAuth
+import Combine
+
+@MainActor
+final class LoginViewModel: ObservableObject {
+    
+    private var cancellables = Set<AnyCancellable>()
+    @Published private(set) var allUsers: [UserInfo] = []
+    @Published private(set) var allUsersNames: [UserNames] = []
+    
+    func addDummyUsernames() async throws {
+        try? await UserManager.shared.addDummyUserNames()
+    }
+    
+    init() {
+        getAllUsers()
+    }
+    
+    func getAllUsers() {
+        UserManager.shared.getAllUsernames()
+            .sink { _ in
+                
+            } receiveValue: { [weak self] usernames in
+                self?.allUsersNames = usernames
+            }
+            .store(in: &cancellables)
+    }
+    
+}
 
 class AuthManager : ObservableObject {
     static let shared = AuthManager()

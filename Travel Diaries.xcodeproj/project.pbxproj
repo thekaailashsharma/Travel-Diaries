@@ -28,6 +28,7 @@
 		4AF235552BE1859F001AFF19 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 4AF235542BE1859F001AFF19 /* FirebaseFirestore */; };
 		4AF235572BE1859F001AFF19 /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 4AF235562BE1859F001AFF19 /* FirebaseFirestoreSwift */; };
 		4AF2355A2BE18640001AFF19 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AF235592BE18640001AFF19 /* User.swift */; };
+		4AF2355C2BE18D17001AFF19 /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AF2355B2BE18D17001AFF19 /* UserManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,6 +48,7 @@
 		4AC133912BDDA1E400FD1B58 /* AvatarViewer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarViewer.swift; sourceTree = "<group>"; };
 		4AF235522BE11AB6001AFF19 /* CompleteProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompleteProfile.swift; sourceTree = "<group>"; };
 		4AF235592BE18640001AFF19 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		4AF2355B2BE18D17001AFF19 /* UserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,6 +135,7 @@
 			children = (
 				4A58DA6E2BE038F2005C962D /* GoogleService-Info.plist */,
 				4A58DA592BE0256E005C962D /* Travel-Diaries-Info.plist */,
+				4AF2355D2BE18D21001AFF19 /* Manager */,
 				4AF235582BE1862A001AFF19 /* Models */,
 				4A58DA562BE024DC005C962D /* Fonts */,
 				4A58DA5A2BE025EA005C962D /* Utils */,
@@ -159,6 +162,14 @@
 				4AF235592BE18640001AFF19 /* User.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		4AF2355D2BE18D21001AFF19 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				4AF2355B2BE18D17001AFF19 /* UserManager.swift */,
+			);
+			path = Manager;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -247,6 +258,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4AF2355C2BE18D17001AFF19 /* UserManager.swift in Sources */,
 				4AF235532BE11AB6001AFF19 /* CompleteProfile.swift in Sources */,
 				4A58DA5C2BE02602005C962D /* CustomFont.swift in Sources */,
 				4A58DA552BE02208005C962D /* CountryDictionary.swift in Sources */,
