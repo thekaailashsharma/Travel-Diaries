@@ -21,10 +21,11 @@ final class LoginViewModel: ObservableObject {
     }
     
     init() {
+        getAllUserNames()
         getAllUsers()
     }
     
-    func getAllUsers() {
+    func getAllUserNames() {
         UserManager.shared.getAllUsernames()
             .sink { _ in
                 
@@ -32,6 +33,17 @@ final class LoginViewModel: ObservableObject {
                 self?.allUsersNames = usernames
             }
             .store(in: &cancellables)
+    }
+    
+    func getAllUsers() {
+        UserManager.shared.getAllUsers()
+            .sink { _ in
+                
+            } receiveValue: { [weak self] userInfo in
+                self?.allUsers = userInfo
+            }
+            .store(in: &cancellables)
+
     }
     
 }

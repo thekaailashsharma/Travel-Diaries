@@ -51,7 +51,7 @@ final class UserManager {
         
     }
     
-    private let userCollection: CollectionReference = Firestore.firestore().collection("users")
+    private let userCollection: CollectionReference = Firestore.firestore().collection("userInfo")
     private let userNamesCollection: CollectionReference = Firestore.firestore().collection("usernames")
     
     private func userDocument(phoneNumber: String) -> DocumentReference {
@@ -78,22 +78,11 @@ final class UserManager {
         
     }
     
-    func getAllUsernames() -> AnyPublisher<[UserNames], Error> {
-        
-        let publisher = PassthroughSubject<[UserNames], Error>()
-        
-        userNamesCollection.addSnapshotListener { querySnapshot, error in
-            guard let document = querySnapshot?.documents else {
-                print("No usernames yet")
-                return
-            }
-            let usernames: [UserNames] = document.compactMap { try? $0.data(as: UserNames.self) }
-            publisher.send(usernames)
-        }
-        
-        return publisher.eraseToAnyPublisher()
+    func getAllUsers() -> AnyPublisher<[UserInfo], Error> {
+        getAllData(collection: userCollection)
     }
     
-    
-    
+    func getAllUsernames() -> AnyPublisher<[UserNames], Error> {
+        getAllData(collection: userNamesCollection)
+    }
 }

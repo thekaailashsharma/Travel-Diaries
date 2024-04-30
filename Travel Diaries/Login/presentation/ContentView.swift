@@ -13,6 +13,7 @@ import AVKit
 struct ContentsView: View {
     
     @StateObject var authManager = AuthManager()
+    @StateObject var loginViewModel = LoginViewModel()
     
 //    init(){
 //        for family in UIFont.familyNames {
@@ -30,6 +31,7 @@ struct ContentsView: View {
     @State var progressText: String = "You will be redirected !!"
     @State var isOTPVisible: Bool = false
     @State var isLoading: Bool = false
+    @State var isLoginProfileVisible: Bool = false
     @State var isCompleteProfileVisible: Bool = false
     
     var body: some View {
@@ -104,7 +106,7 @@ struct ContentsView: View {
                                     Spacer()
                                     
                                     Button(action: {
-                                        isCompleteProfileVisible = true
+                                        isLoginProfileVisible = true
                                     }, label: {
                                         Text("Take Me In")
                                             .font(.customFont(.poppins, size: 20))
@@ -171,9 +173,15 @@ struct ContentsView: View {
             
         }
         .edgesIgnoringSafeArea(.all)
+        .fullScreenCover(isPresented: $isLoginProfileVisible, content: {
+            LoginProfile(isCompleteProfileVisible: $isCompleteProfileVisible, isLoginProfileVisible: $isLoginProfileVisible)
+                .environmentObject(authManager)
+                .environmentObject(loginViewModel)
+        })
         .fullScreenCover(isPresented: $isCompleteProfileVisible, content: {
             CompleteProfile()
                 .environmentObject(authManager)
+                .environmentObject(loginViewModel)
         })
     }
 }
