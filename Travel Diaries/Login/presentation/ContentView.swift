@@ -30,6 +30,7 @@ struct ContentsView: View {
     @State var progressText: String = "You will be redirected !!"
     @State var isOTPVisible: Bool = false
     @State var isLoading: Bool = false
+    @State var isCompleteProfileVisible: Bool = false
     
     var body: some View {
         ZStack {
@@ -103,7 +104,7 @@ struct ContentsView: View {
                                     Spacer()
                                     
                                     Button(action: {
-                                       
+                                        isCompleteProfileVisible = true
                                     }, label: {
                                         Text("Take Me In")
                                             .font(.customFont(.poppins, size: 20))
@@ -170,6 +171,10 @@ struct ContentsView: View {
             
         }
         .edgesIgnoringSafeArea(.all)
+        .fullScreenCover(isPresented: $isCompleteProfileVisible, content: {
+            CompleteProfile()
+                .environmentObject(authManager)
+        })
     }
 }
 
@@ -211,117 +216,7 @@ struct VideoBackgroundView: UIViewRepresentable {
 }
 
 
-struct EnterPhoneNumber: View {
-    @Binding var number: String
-    @Binding var countryCode: String
-    @Binding var smsCode: String
-    @Binding var isOTPVisble: Bool
-    @FocusState var isNumberActive: Bool
-    @FocusState var isOTPActive: Bool
-    var onClick: () -> Void
-    let darkBlue = #colorLiteral(red: 0.4, green: 0.4, blue: 0.4, alpha: 1)
-    var body: some View {
-        VStack {
-            if !isOTPVisble {
-                HStack {
-                    Picker(selection: $countryCode) {
-                        ForEach(countryDictionary.sorted(by: <), id: \.key) { key , value in
-                            HStack {
-                                Text("\(countryName(countryCode: key) ?? key)").tag(value)
-                            }
-                            
-                        }
-                    } label: {
-                        Text("+\(countryCode)")
-                    }
-                    
-                    
-                    
-                    TextField(text: $number, label: {
-                        Text("Enter Phone Number")
-                            .font(.customFont(.poppins, size: 15))
-                            .padding()
-                    })
-                    .submitLabel(.continue)
-                    .keyboardType(.default)
-                    .focused($isNumberActive)
-                    .onSubmit {
-                        isNumberActive.toggle()
-                        onClick()
-                    }
-                    .font(.customFont(.poppins, size: 18))
-                    .foregroundStyle(.white)
-                    .padding()
-                    .background(.black.opacity(0.6))
-                    .clipShape(RoundedRectangle(cornerRadius: 20))
-                    .overlay {
-                        RoundedRectangle(cornerRadius: 20)
-                            .stroke(.white.opacity(0.5))
-                    }
-                }
-            }
-            else {
-                HStack {
-                    TextField(text: $smsCode, label: {
-                        Text("Enter OTP Here.")
-                            .font(.customFont(.poppins, size: 15))
-                            .padding()
-                    })
-                    .submitLabel(.go)
-                    .keyboardType(.default)
-                    .focused($isOTPActive)
-                    .onSubmit {
-                        isOTPActive.toggle()
-                        onClick()
-                    }
-                    .font(.customFont(.poppins, size: 18))
-                    .keyboardType(.numberPad)
-                    .foregroundStyle(.white)
-                    .padding()
-                    .background(.black.opacity(0.6))
-                    .clipShape(RoundedRectangle(cornerRadius: 20))
-                    .overlay {
-                        RoundedRectangle(cornerRadius: 20)
-                            .stroke(.white.opacity(0.5))
-                    }
-                }
-            }
-            Spacer()
-            Button(action: {
-                onClick()
-            }, label: {
-                Text(isOTPVisble ? "Take Me In" : "Proceed Ahead")
-                    .font(.customFont(.poppins, size: 20))
-                    .foregroundStyle(.white)
-                    .padding()
-                    .frame(width: 300)
-                    .background(Color(uiColor: .black).opacity(0.6))
-                    .clipShape(RoundedRectangle(cornerRadius: 10))
-                    .overlay {
-                        RoundedRectangle(cornerRadius: 10)
-                            .stroke(.white.opacity(0.5))
-                    }
-                
-            })
-            Spacer()
-            HStack {
-                Circle()
-                    .fill(isOTPVisble ? .white.opacity(0.6): .white)
-                    .frame(width: 10, height: 10)
-                
-                Circle()
-                    .fill(!isOTPVisble ? .white.opacity(0.6): .white)
-                    .frame(width: 10, height: 10)
-                
-            }
-        }
-        .animation(.easeInOut, value: isNumberActive)
-        .animation(.easeInOut, value: isOTPActive)
-        .padding()
-        .frame(width: 350, height: 300, alignment: .top)
-        
-    }
-}
+
 
 #Preview {
     ContentsView()
