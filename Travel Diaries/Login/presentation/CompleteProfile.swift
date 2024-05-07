@@ -69,47 +69,25 @@ struct CompleteProfileView: View {
                     }
                     .tag(CompleteProfileValues.profilePictureUrl)
                     
+                    GenderCard() {
+                        withAnimation(.bouncy(duration: 1)) {
+                            currentProfileScreen = .travelPreferences
+                        }
+                    }
+                    .environmentObject(loginViewModel)
+                    .tabItem {
+                        Text(CompleteProfileValues.name.rawValue)
+                            .font(.customFont(.poppins, size: 25))
+                            .foregroundStyle(.white)
+                    }
+                    .tag(CompleteProfileValues.gender)
+                    
                     
                     
                     
                 }
                 .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
                 
-                VStack {
-                    Spacer()
-                    HStack {
-                        Spacer()
-                        Button(action: {
-                            withAnimation(.bouncy(duration: 1)) {
-                                switch currentProfileScreen {
-                                case .name:
-                                    currentProfileScreen = .profilePictureUrl
-                                case .profilePictureUrl:
-                                    currentProfileScreen = .gender
-                                case .gender:
-                                    currentProfileScreen = .travelPreferences
-                                case .travelPreferences:
-                                    currentProfileScreen = .travelPhotos
-                                case .travelPhotos:
-                                    currentProfileScreen = .travelPreferences
-                                case .travelQuestions:
-                                    currentProfileScreen = .name
-                                }
-                            }
-                        }) {
-                            Image(systemName: "arrowtriangle.right.circle.fill")
-                                .resizable()
-                                .aspectRatio(contentMode: .fit)
-                                .frame(width: 40, height: 40)
-                                .padding()
-                                .foregroundColor(Color.customColor(.green))
-                                .clipShape(Circle())
-                                .shadow(radius: 3)
-                        }
-                    }
-                    .padding()
-                }
-                .padding()
             }
             .navigationTitle(currentProfileScreen.rawValue)
             

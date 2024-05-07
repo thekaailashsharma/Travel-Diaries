@@ -15,7 +15,8 @@ final class LoginViewModel: ObservableObject {
     
     @Published var phoneNumber: String = ""
     @Published var userName: String = ""
-    @Published var profilePictureUrl: String = ""
+    @Published var profilePictureUrl: URL? = nil
+    @Published var gender: Genders = .male
     
     
     private var cancellables = Set<AnyCancellable>()
@@ -118,4 +119,10 @@ class AuthManager : ObservableObject {
             completion(true)
         }
     }
+}
+
+enum Genders: String {
+    case male = "Male"
+    case female = "Female"
+    case other = "other"
 }

@@ -103,6 +103,7 @@ struct PhotoPicker: View {
     var path: String
     var OnSuccess: () -> Void
     @EnvironmentObject var storageManager: StorageManager
+    @EnvironmentObject var loginViewModel: LoginViewModel
     @StateObject var photoPicker = PhotoPickerViewController()
     @State private var selectedImage: UIImage? = nil
     
@@ -121,6 +122,7 @@ struct PhotoPicker: View {
                         .onAppear {
                             DispatchQueue.main.asyncAfter(deadline: .now()) {
                                 withAnimation(.bouncy(duration: 1)) {
+                                    loginViewModel.profilePictureUrl = url
                                     OnSuccess()
                                 }
                             }
@@ -142,7 +144,7 @@ struct PhotoPicker: View {
                     .clipShape(Circle())
                     .overlay(
                         Circle()
-                            .stroke(Color.customColor(.pink), lineWidth: 1.0)
+                            .stroke(Color.customColor(.white), lineWidth: 1.0)
                     )
                     .frame(width: 250, height: 250)
                     .shadow(radius: 5)

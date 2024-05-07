@@ -157,7 +157,7 @@ struct CustomTextField: View {
                     .clipShape(RoundedRectangle(cornerRadius: 10))
                     .overlay {
                         RoundedRectangle(cornerRadius: 10)
-                            .stroke(.white.opacity(0.5))
+                            .stroke(Color.customColor(.green).opacity(0.5))
                     }
                 
             })
