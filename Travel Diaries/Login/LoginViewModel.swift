@@ -17,6 +17,7 @@ final class LoginViewModel: ObservableObject {
     @Published var userName: String = ""
     @Published var profilePictureUrl: URL? = nil
     @Published var gender: Genders = .male
+    @Published var preferencesList: [String] = []
     
     
     private var cancellables = Set<AnyCancellable>()

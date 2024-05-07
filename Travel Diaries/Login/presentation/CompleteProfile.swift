@@ -32,7 +32,7 @@ struct CompleteProfileView: View {
                             .resizable()
                             .aspectRatio(contentMode: .fit)
                             .frame(width: 120, height: 120)
-                            .foregroundColor(Color.customColor(.green).opacity(0.4))
+                            .foregroundColor(Color.customColor(.green).opacity(0.6))
                         
                         CustomTextField(textValue: $loginViewModel.userName, keyboardType: .default, label: "Enter Username") {
                             if loginViewModel.allUsersNames.contains(where: {$0.userName == name}) {
@@ -51,22 +51,12 @@ struct CompleteProfileView: View {
                         
                         
                     }
-                    .tabItem {
-                        Text(CompleteProfileValues.name.rawValue)
-                            .font(.customFont(.poppins, size: 25))
-                            .foregroundStyle(.white)
-                    }
                     .tag(CompleteProfileValues.name)
                     
                     PhotoPicker(path: "\(loginViewModel.userName)/profilePhoto/\(loginViewModel.userName).jpeg"){
                         currentProfileScreen = .gender
                     }
                     .environmentObject(storageManager)
-                    .tabItem {
-                        Text(CompleteProfileValues.name.rawValue)
-                            .font(.customFont(.poppins, size: 25))
-                            .foregroundStyle(.white)
-                    }
                     .tag(CompleteProfileValues.profilePictureUrl)
                     
                     GenderCard() {
@@ -75,12 +65,15 @@ struct CompleteProfileView: View {
                         }
                     }
                     .environmentObject(loginViewModel)
-                    .tabItem {
-                        Text(CompleteProfileValues.name.rawValue)
-                            .font(.customFont(.poppins, size: 25))
-                            .foregroundStyle(.white)
-                    }
                     .tag(CompleteProfileValues.gender)
+                    
+                    TravelPreferncesCard() {
+                        withAnimation(.bouncy(duration: 1)) {
+                            currentProfileScreen = .travelPhotos
+                        }
+                    }
+                    .environmentObject(loginViewModel)
+                    .tag(CompleteProfileValues.travelPreferences)
                     
                     
                     
