@@ -35,14 +35,13 @@ struct GenderCard: View {
             } label: {
                 Text("Ahh Proceed Now ☠️")
                     .font(.customFont(.poppins, size: 20))
-                    .foregroundStyle(.white)
+                    .foregroundStyle(Color.customColor(.white))
                     .padding()
                     .frame(width: 300)
-                    .background(Color(uiColor: .black).opacity(0.6))
                     .clipShape(RoundedRectangle(cornerRadius: 10))
                     .overlay {
                         RoundedRectangle(cornerRadius: 10)
-                            .stroke(Color.customColor(.green).opacity(0.5))
+                            .stroke(Color.customColor(.green))
                     }
             }
             Spacer()

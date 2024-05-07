@@ -150,14 +150,13 @@ struct CustomTextField: View {
             }, label: {
                 Text("Proceed Ahead")
                     .font(.customFont(.poppins, size: 20))
-                    .foregroundStyle(.white)
+                    .foregroundStyle(Color.customColor(.green))
                     .padding()
                     .frame(width: 300)
-                    .background(Color(uiColor: .black).opacity(0.6))
                     .clipShape(RoundedRectangle(cornerRadius: 10))
                     .overlay {
                         RoundedRectangle(cornerRadius: 10)
-                            .stroke(Color.customColor(.green).opacity(0.5))
+                            .stroke(Color.customColor(.green))
                     }
                 
             })
