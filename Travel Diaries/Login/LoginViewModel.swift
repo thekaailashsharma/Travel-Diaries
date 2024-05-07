@@ -12,6 +12,13 @@ import Combine
 @MainActor
 final class LoginViewModel: ObservableObject {
     
+    
+    @Published var phoneNumber: String = ""
+    @Published var userName: String = ""
+    @Published var profilePictureUrl: URL? = nil
+    @Published var gender: Genders = .male
+    
+    
     private var cancellables = Set<AnyCancellable>()
     @Published private(set) var allUsers: [UserInfo] = []
     @Published private(set) var allUsersNames: [UserNames] = []
@@ -112,4 +119,10 @@ class AuthManager : ObservableObject {
             completion(true)
         }
     }
+}
+
+enum Genders: String {
+    case male = "Male"
+    case female = "Female"
+    case other = "other"
 }

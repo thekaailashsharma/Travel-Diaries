@@ -6,54 +6,91 @@
 //
 
 import SwiftUI
+import PhotosUI
 
-struct CompleteProfile: View {
-    
-    @EnvironmentObject var authManager: AuthManager
+struct CompleteProfileView: View {
     
     @EnvironmentObject var loginViewModel: LoginViewModel
+    @EnvironmentObject var storageManager: StorageManager
+    @State private var name: String = ""
+    @State var isUsernameTaken: Bool = false
+    @State private var currentProfileScreen: CompleteProfileValues = .name
+    @State private var selection = 0
     
-    @State var name: String = ""
-    @State var currentProfileScreen: CompleteProfileValues = .name
+    @State var selectedImage: UIImage? = nil
+    @State var date: Date? = nil
+    @State var location: CLLocationCoordinate2D? = nil
+    @State var isLoading: Bool = false
     
     var body: some View {
         NavigationStack {
             ZStack {
-                VStack {
-                    Spacer()
-                    switch currentProfileScreen {
-                    case .name:
-                        CustomTextField(textValue: $name, keyboardType: .default, label: "Ok") {
-                            
+                TabView(selection: $currentProfileScreen) {
+                    VStack {
+                        
+                        Image(systemName: "person.badge.shield.checkmark")
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(width: 120, height: 120)
+                            .foregroundColor(Color.customColor(.green).opacity(0.4))
+                        
+                        CustomTextField(textValue: $loginViewModel.userName, keyboardType: .default, label: "Enter Username") {
+                            if loginViewModel.allUsersNames.contains(where: {$0.userName == name}) {
+                                isUsernameTaken = true
+                            } else {
+                                isUsernameTaken = false
+                                withAnimation(.bouncy(duration: 1)) {
+                                    currentProfileScreen = .profilePictureUrl
+                                }
+                            }
                         }
-                    case .profilePictureUrl:
-                        CustomTextField(textValue: $name, keyboardType: .default, label: "Ok") {
-                            
-                        }
-                    case .gender:
-                        CustomTextField(textValue: $name, keyboardType: .default, label: "Ok") {
-                            
-                        }
-                    case .travelPreferences:
-                        CustomTextField(textValue: $name, keyboardType: .default, label: "Ok") {
-                            
-                        }
-                    case .travelPhotos:
-                        CustomTextField(textValue: $name, keyboardType: .default, label: "Ok") {
-                            
-                        }
-                    case .travelQuestions:
-                        CustomTextField(textValue: $name, keyboardType: .default, label: "Ok") {
-                            
+                        
+                        Text(isUsernameTaken ? "Username Not Available" : "Username Available")
+                            .font(.customFont(.poppins, size: 15))
+                            .foregroundStyle(isUsernameTaken ? .red : .green)
+                        
+                        
+                    }
+                    .tabItem {
+                        Text(CompleteProfileValues.name.rawValue)
+                            .font(.customFont(.poppins, size: 25))
+                            .foregroundStyle(.white)
+                    }
+                    .tag(CompleteProfileValues.name)
+                    
+                    PhotoPicker(path: "\(loginViewModel.userName)/profilePhoto/\(loginViewModel.userName).jpeg"){
+                        currentProfileScreen = .gender
+                    }
+                    .environmentObject(storageManager)
+                    .tabItem {
+                        Text(CompleteProfileValues.name.rawValue)
+                            .font(.customFont(.poppins, size: 25))
+                            .foregroundStyle(.white)
+                    }
+                    .tag(CompleteProfileValues.profilePictureUrl)
+                    
+                    GenderCard() {
+                        withAnimation(.bouncy(duration: 1)) {
+                            currentProfileScreen = .travelPreferences
                         }
                     }
-                    Spacer()
+                    .environmentObject(loginViewModel)
+                    .tabItem {
+                        Text(CompleteProfileValues.name.rawValue)
+                            .font(.customFont(.poppins, size: 25))
+                            .foregroundStyle(.white)
+                    }
+                    .tag(CompleteProfileValues.gender)
+                    
+                    
+                    
                     
                 }
-                
+                .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
                 
             }
             .navigationTitle(currentProfileScreen.rawValue)
+            
         }
     }
 }
@@ -68,6 +105,6 @@ enum CompleteProfileValues: String {
 }
 
 
-#Preview {
-    CompleteProfile()
-}
+//#Preview {
+//    CompleteProfile()
+//}
