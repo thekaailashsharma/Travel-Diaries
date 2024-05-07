@@ -13,6 +13,7 @@ import AVKit
 struct ContentsView: View {
     
     @StateObject var authManager = AuthManager()
+    @StateObject var storageManager = StorageManager()
     @StateObject var loginViewModel = LoginViewModel()
     
 //    init(){
@@ -174,14 +175,21 @@ struct ContentsView: View {
         }
         .edgesIgnoringSafeArea(.all)
         .fullScreenCover(isPresented: $isLoginProfileVisible, content: {
-            LoginProfile(isCompleteProfileVisible: $isCompleteProfileVisible, isLoginProfileVisible: $isLoginProfileVisible)
-                .environmentObject(authManager)
+//            LoginProfile(isCompleteProfileVisible: $isCompleteProfileVisible, isLoginProfileVisible: $isLoginProfileVisible)
+//                .environmentObject(authManager)
+//                .environmentObject(loginViewModel)
+            
+            CompleteProfileView()
+//                .environmentObject(authManager)
                 .environmentObject(loginViewModel)
+                .environmentObject(storageManager)
+               
         })
         .fullScreenCover(isPresented: $isCompleteProfileVisible, content: {
-            CompleteProfile()
+            CompleteProfileView()
                 .environmentObject(authManager)
                 .environmentObject(loginViewModel)
+               
         })
     }
 }

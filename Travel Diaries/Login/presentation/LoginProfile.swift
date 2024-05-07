@@ -31,7 +31,7 @@ struct LoginProfile: View {
                     Spacer()
                     switch currentProfileScreen {
                     case .phoneNumber:
-                        EnterPhoneNumber(number: $phoneNumber, countryCode: $countryCode) {
+                        EnterPhoneNumber(number: $loginViewModel.phoneNumber, countryCode: $countryCode) {
                             
                             isLoading = true
                             authManager.startAuth(phoneNumber: "+\(getCountryCode(countryCode))\(phoneNumber)") { value in
@@ -120,7 +120,13 @@ struct CustomTextField: View {
                 .keyboardType(keyboardType)
                 .focused($isKeyBoardActive)
                 .onSubmit {
-                    onClick()
+                    withAnimation {
+                        isKeyBoardActive = false
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                            onClick()
+                        }
+                    }
+                    
                 }
                 .font(.customFont(.poppins, size: 18))
                 .keyboardType(.numberPad)
@@ -133,12 +139,14 @@ struct CustomTextField: View {
                         .stroke(.white.opacity(0.5))
                 }
             }
-            .onAppear {
-                isKeyBoardActive = true
-            }
             Spacer()
             Button(action: {
-                onClick()
+                withAnimation {
+                    isKeyBoardActive = false
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                        onClick()
+                    }
+                }
             }, label: {
                 Text("Proceed Ahead")
                     .font(.customFont(.poppins, size: 20))

@@ -12,6 +12,12 @@ import Combine
 @MainActor
 final class LoginViewModel: ObservableObject {
     
+    
+    @Published var phoneNumber: String = ""
+    @Published var userName: String = ""
+    @Published var profilePictureUrl: String = ""
+    
+    
     private var cancellables = Set<AnyCancellable>()
     @Published private(set) var allUsers: [UserInfo] = []
     @Published private(set) var allUsersNames: [UserNames] = []

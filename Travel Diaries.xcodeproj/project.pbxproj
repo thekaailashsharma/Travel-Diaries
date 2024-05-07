@@ -18,12 +18,18 @@
 		4A58DA6C2BE03727005C962D /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = 4A58DA6B2BE03727005C962D /* FirebaseCrashlytics */; };
 		4A58DA6F2BE038F2005C962D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4A58DA6E2BE038F2005C962D /* GoogleService-Info.plist */; };
 		4A58DA722BE0396A005C962D /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A58DA712BE0396A005C962D /* LoginViewModel.swift */; };
+		4A9F9B0D2BEA1AD600E5AAF0 /* CustomColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A9F9B0C2BEA1AD600E5AAF0 /* CustomColors.swift */; };
+		4A9F9B0F2BEA233F00E5AAF0 /* MetadataPhotoPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A9F9B0E2BEA233F00E5AAF0 /* MetadataPhotoPicker.swift */; };
+		4A9F9B112BEA351D00E5AAF0 /* PermissionsCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A9F9B102BEA351D00E5AAF0 /* PermissionsCard.swift */; };
+		4A9F9B132BEA546200E5AAF0 /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A9F9B122BEA546200E5AAF0 /* StorageManager.swift */; };
+		4A9F9B152BEA547700E5AAF0 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 4A9F9B142BEA547700E5AAF0 /* FirebaseStorage */; };
 		4AC133802BDD800D00FD1B58 /* Travel_DiariesApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AC1337F2BDD800D00FD1B58 /* Travel_DiariesApp.swift */; };
 		4AC133822BDD800D00FD1B58 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AC133812BDD800D00FD1B58 /* ContentView.swift */; };
 		4AC133842BDD800F00FD1B58 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4AC133832BDD800F00FD1B58 /* Assets.xcassets */; };
 		4AC133872BDD800F00FD1B58 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4AC133862BDD800F00FD1B58 /* Preview Assets.xcassets */; };
 		4AC133902BDD9B8B00FD1B58 /* avatar3.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 4AC1338F2BDD9B8B00FD1B58 /* avatar3.usdz */; };
 		4AC133922BDDA1E400FD1B58 /* AvatarViewer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AC133912BDDA1E400FD1B58 /* AvatarViewer.swift */; };
+		4AECCDF12BE7B21C00771DA6 /* PhotoPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AECCDF02BE7B21C00771DA6 /* PhotoPicker.swift */; };
 		4AF235532BE11AB6001AFF19 /* LoginProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AF235522BE11AB6001AFF19 /* LoginProfile.swift */; };
 		4AF235552BE1859F001AFF19 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 4AF235542BE1859F001AFF19 /* FirebaseFirestore */; };
 		4AF235572BE1859F001AFF19 /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 4AF235562BE1859F001AFF19 /* FirebaseFirestoreSwift */; };
@@ -41,6 +47,10 @@
 		4A58DA5D2BE02640005C962D /* Poppins-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Regular.ttf"; sourceTree = "<group>"; };
 		4A58DA6E2BE038F2005C962D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		4A58DA712BE0396A005C962D /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		4A9F9B0C2BEA1AD600E5AAF0 /* CustomColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomColors.swift; sourceTree = "<group>"; };
+		4A9F9B0E2BEA233F00E5AAF0 /* MetadataPhotoPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetadataPhotoPicker.swift; sourceTree = "<group>"; };
+		4A9F9B102BEA351D00E5AAF0 /* PermissionsCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PermissionsCard.swift; sourceTree = "<group>"; };
+		4A9F9B122BEA546200E5AAF0 /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
 		4AC1337C2BDD800D00FD1B58 /* Travel Diaries.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Travel Diaries.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4AC1337F2BDD800D00FD1B58 /* Travel_DiariesApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Travel_DiariesApp.swift; sourceTree = "<group>"; };
 		4AC133812BDD800D00FD1B58 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -48,6 +58,7 @@
 		4AC133862BDD800F00FD1B58 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		4AC1338F2BDD9B8B00FD1B58 /* avatar3.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = avatar3.usdz; sourceTree = "<group>"; };
 		4AC133912BDDA1E400FD1B58 /* AvatarViewer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarViewer.swift; sourceTree = "<group>"; };
+		4AECCDF02BE7B21C00771DA6 /* PhotoPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoPicker.swift; sourceTree = "<group>"; };
 		4AF235522BE11AB6001AFF19 /* LoginProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginProfile.swift; sourceTree = "<group>"; };
 		4AF235592BE18640001AFF19 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		4AF2355B2BE18D17001AFF19 /* UserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
@@ -65,6 +76,7 @@
 				4A58DA6C2BE03727005C962D /* FirebaseCrashlytics in Frameworks */,
 				4AF235572BE1859F001AFF19 /* FirebaseFirestoreSwift in Frameworks */,
 				4A58DA662BE03727005C962D /* FirebaseAnalytics in Frameworks */,
+				4A9F9B152BEA547700E5AAF0 /* FirebaseStorage in Frameworks */,
 				4A58DA642BE036F0005C962D /* FirebaseAuth in Frameworks */,
 				4AF235552BE1859F001AFF19 /* FirebaseFirestore in Frameworks */,
 			);
@@ -88,6 +100,8 @@
 				4A58DA542BE02208005C962D /* CountryDictionary.swift */,
 				4A58DA5B2BE02602005C962D /* CustomFont.swift */,
 				4AF2355E2BE19D6C001AFF19 /* GetGenericFirebaseee.swift */,
+				4A9F9B0C2BEA1AD600E5AAF0 /* CustomColors.swift */,
+				4A9F9B0E2BEA233F00E5AAF0 /* MetadataPhotoPicker.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -114,6 +128,8 @@
 				4AC133812BDD800D00FD1B58 /* ContentView.swift */,
 				4AF235522BE11AB6001AFF19 /* LoginProfile.swift */,
 				4AF235602BE19F45001AFF19 /* CompleteProfile.swift */,
+				4AECCDF02BE7B21C00771DA6 /* PhotoPicker.swift */,
+				4A9F9B102BEA351D00E5AAF0 /* PermissionsCard.swift */,
 			);
 			path = presentation;
 			sourceTree = "<group>";
@@ -174,6 +190,7 @@
 			isa = PBXGroup;
 			children = (
 				4AF2355B2BE18D17001AFF19 /* UserManager.swift */,
+				4A9F9B122BEA546200E5AAF0 /* StorageManager.swift */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
@@ -202,6 +219,7 @@
 				4A58DA6B2BE03727005C962D /* FirebaseCrashlytics */,
 				4AF235542BE1859F001AFF19 /* FirebaseFirestore */,
 				4AF235562BE1859F001AFF19 /* FirebaseFirestoreSwift */,
+				4A9F9B142BEA547700E5AAF0 /* FirebaseStorage */,
 			);
 			productName = "Travel Diaries";
 			productReference = 4AC1337C2BDD800D00FD1B58 /* Travel Diaries.app */;
@@ -264,17 +282,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4A9F9B112BEA351D00E5AAF0 /* PermissionsCard.swift in Sources */,
 				4AF2355C2BE18D17001AFF19 /* UserManager.swift in Sources */,
+				4A9F9B0D2BEA1AD600E5AAF0 /* CustomColors.swift in Sources */,
 				4AF235612BE19F45001AFF19 /* CompleteProfile.swift in Sources */,
 				4AF235532BE11AB6001AFF19 /* LoginProfile.swift in Sources */,
 				4A58DA5C2BE02602005C962D /* CustomFont.swift in Sources */,
+				4A9F9B0F2BEA233F00E5AAF0 /* MetadataPhotoPicker.swift in Sources */,
 				4AF2355F2BE19D6C001AFF19 /* GetGenericFirebaseee.swift in Sources */,
 				4A58DA552BE02208005C962D /* CountryDictionary.swift in Sources */,
 				4A58DA722BE0396A005C962D /* LoginViewModel.swift in Sources */,
 				4AF2355A2BE18640001AFF19 /* User.swift in Sources */,
+				4AECCDF12BE7B21C00771DA6 /* PhotoPicker.swift in Sources */,
 				4AC133822BDD800D00FD1B58 /* ContentView.swift in Sources */,
 				4AC133802BDD800D00FD1B58 /* Travel_DiariesApp.swift in Sources */,
 				4AC133922BDDA1E400FD1B58 /* AvatarViewer.swift in Sources */,
+				4A9F9B132BEA546200E5AAF0 /* StorageManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -412,6 +435,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Travel-Diaries-Info.plist";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Allow Travel Diaries to acess Photos";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -443,6 +467,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Travel-Diaries-Info.plist";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Allow Travel Diaries to acess Photos";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -521,6 +546,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 4A58DA612BE036D0005C962D /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseCrashlytics;
+		};
+		4A9F9B142BEA547700E5AAF0 /* FirebaseStorage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4A58DA612BE036D0005C962D /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseStorage;
 		};
 		4AF235542BE1859F001AFF19 /* FirebaseFirestore */ = {
 			isa = XCSwiftPackageProductDependency;

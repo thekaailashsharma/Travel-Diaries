@@ -17,5 +17,9 @@
 	<array>
 		<string>frosting.ttf</string>
 	</array>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>We need access to your photo library to pick photos and retrieve metadata.</string>
+	<key>PHPhotoLibraryPreventLimitedAccessKey</key>
+	<false/>
 </dict>
 </plist>
