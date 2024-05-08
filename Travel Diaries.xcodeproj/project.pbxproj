@@ -26,6 +26,13 @@
 		4A9F9B172BEA661A00E5AAF0 /* GenderCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A9F9B162BEA661A00E5AAF0 /* GenderCard.swift */; };
 		4A9F9B192BEA8FC500E5AAF0 /* TravelPreferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A9F9B182BEA8FC500E5AAF0 /* TravelPreferences.swift */; };
 		4A9F9B1C2BEA90F100E5AAF0 /* TravelPreferncesCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A9F9B1B2BEA90F100E5AAF0 /* TravelPreferncesCard.swift */; };
+		4AB693EC2BEBE6A800B36118 /* PostScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AB693EB2BEBE6A800B36118 /* PostScreen.swift */; };
+		4AB693F02BEBEC7B00B36118 /* HereSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AB693EF2BEBEC7B00B36118 /* HereSearch.swift */; };
+		4AB693F22BEBEE7100B36118 /* APIErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AB693F12BEBEE7100B36118 /* APIErrors.swift */; };
+		4AB693F52BEBEEAC00B36118 /* ApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AB693F42BEBEEAC00B36118 /* ApiManager.swift */; };
+		4AB693F92BEBEF9200B36118 /* PostViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AB693F82BEBEF9200B36118 /* PostViewModel.swift */; };
+		4AB693FC2BEBFE1700B36118 /* LocationSearchHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AB693FB2BEBFE1700B36118 /* LocationSearchHistory.swift */; };
+		4AB693FE2BEC07D700B36118 /* LocationSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AB693FD2BEC07D700B36118 /* LocationSearchView.swift */; };
 		4AC133802BDD800D00FD1B58 /* Travel_DiariesApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AC1337F2BDD800D00FD1B58 /* Travel_DiariesApp.swift */; };
 		4AC133822BDD800D00FD1B58 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AC133812BDD800D00FD1B58 /* ContentView.swift */; };
 		4AC133842BDD800F00FD1B58 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4AC133832BDD800F00FD1B58 /* Assets.xcassets */; };
@@ -57,6 +64,13 @@
 		4A9F9B162BEA661A00E5AAF0 /* GenderCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenderCard.swift; sourceTree = "<group>"; };
 		4A9F9B182BEA8FC500E5AAF0 /* TravelPreferences.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelPreferences.swift; sourceTree = "<group>"; };
 		4A9F9B1B2BEA90F100E5AAF0 /* TravelPreferncesCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelPreferncesCard.swift; sourceTree = "<group>"; };
+		4AB693EB2BEBE6A800B36118 /* PostScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostScreen.swift; sourceTree = "<group>"; };
+		4AB693EF2BEBEC7B00B36118 /* HereSearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HereSearch.swift; sourceTree = "<group>"; };
+		4AB693F12BEBEE7100B36118 /* APIErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIErrors.swift; sourceTree = "<group>"; };
+		4AB693F42BEBEEAC00B36118 /* ApiManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiManager.swift; sourceTree = "<group>"; };
+		4AB693F82BEBEF9200B36118 /* PostViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewModel.swift; sourceTree = "<group>"; };
+		4AB693FB2BEBFE1700B36118 /* LocationSearchHistory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationSearchHistory.swift; sourceTree = "<group>"; };
+		4AB693FD2BEC07D700B36118 /* LocationSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationSearchView.swift; sourceTree = "<group>"; };
 		4AC1337C2BDD800D00FD1B58 /* Travel Diaries.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Travel Diaries.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4AC1337F2BDD800D00FD1B58 /* Travel_DiariesApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Travel_DiariesApp.swift; sourceTree = "<group>"; };
 		4AC133812BDD800D00FD1B58 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -151,6 +165,49 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		4AB693ED2BEBEC4500B36118 /* ApiManager */ = {
+			isa = PBXGroup;
+			children = (
+				4AB693EE2BEBEC5A00B36118 /* Models */,
+				4AB693F42BEBEEAC00B36118 /* ApiManager.swift */,
+			);
+			path = ApiManager;
+			sourceTree = "<group>";
+		};
+		4AB693EE2BEBEC5A00B36118 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				4AB693EF2BEBEC7B00B36118 /* HereSearch.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		4AB693F62BEBEF6600B36118 /* Post */ = {
+			isa = PBXGroup;
+			children = (
+				4AB693F72BEBEF7800B36118 /* presentation */,
+				4AB693F82BEBEF9200B36118 /* PostViewModel.swift */,
+			);
+			path = Post;
+			sourceTree = "<group>";
+		};
+		4AB693F72BEBEF7800B36118 /* presentation */ = {
+			isa = PBXGroup;
+			children = (
+				4AB693EB2BEBE6A800B36118 /* PostScreen.swift */,
+				4AB693FD2BEC07D700B36118 /* LocationSearchView.swift */,
+			);
+			path = presentation;
+			sourceTree = "<group>";
+		};
+		4AB693FA2BEBFDFC00B36118 /* SwiftData */ = {
+			isa = PBXGroup;
+			children = (
+				4AB693FB2BEBFE1700B36118 /* LocationSearchHistory.swift */,
+			);
+			path = SwiftData;
+			sourceTree = "<group>";
+		};
 		4AC133732BDD800C00FD1B58 = {
 			isa = PBXGroup;
 			children = (
@@ -174,6 +231,8 @@
 			children = (
 				4A58DA6E2BE038F2005C962D /* GoogleService-Info.plist */,
 				4A58DA592BE0256E005C962D /* Travel-Diaries-Info.plist */,
+				4AB693F62BEBEF6600B36118 /* Post */,
+				4AB693ED2BEBEC4500B36118 /* ApiManager */,
 				4AF2355D2BE18D21001AFF19 /* Manager */,
 				4AF235582BE1862A001AFF19 /* Models */,
 				4A58DA562BE024DC005C962D /* Fonts */,
@@ -198,7 +257,9 @@
 		4AF235582BE1862A001AFF19 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				4AB693FA2BEBFDFC00B36118 /* SwiftData */,
 				4AF235592BE18640001AFF19 /* User.swift */,
+				4AB693F12BEBEE7100B36118 /* APIErrors.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -299,13 +360,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4AB693F92BEBEF9200B36118 /* PostViewModel.swift in Sources */,
+				4AB693F02BEBEC7B00B36118 /* HereSearch.swift in Sources */,
 				4A9F9B112BEA351D00E5AAF0 /* PermissionsCard.swift in Sources */,
+				4AB693EC2BEBE6A800B36118 /* PostScreen.swift in Sources */,
+				4AB693F22BEBEE7100B36118 /* APIErrors.swift in Sources */,
 				4AF2355C2BE18D17001AFF19 /* UserManager.swift in Sources */,
 				4A9F9B1C2BEA90F100E5AAF0 /* TravelPreferncesCard.swift in Sources */,
 				4A9F9B0D2BEA1AD600E5AAF0 /* CustomColors.swift in Sources */,
 				4AF235612BE19F45001AFF19 /* CompleteProfile.swift in Sources */,
 				4AF235532BE11AB6001AFF19 /* LoginProfile.swift in Sources */,
 				4A9F9B172BEA661A00E5AAF0 /* GenderCard.swift in Sources */,
+				4AB693FC2BEBFE1700B36118 /* LocationSearchHistory.swift in Sources */,
 				4A9F9B192BEA8FC500E5AAF0 /* TravelPreferences.swift in Sources */,
 				4A58DA5C2BE02602005C962D /* CustomFont.swift in Sources */,
 				4A9F9B0F2BEA233F00E5AAF0 /* MetadataPhotoPicker.swift in Sources */,
@@ -316,8 +382,10 @@
 				4AECCDF12BE7B21C00771DA6 /* PhotoPicker.swift in Sources */,
 				4AC133822BDD800D00FD1B58 /* ContentView.swift in Sources */,
 				4AC133802BDD800D00FD1B58 /* Travel_DiariesApp.swift in Sources */,
+				4AB693F52BEBEEAC00B36118 /* ApiManager.swift in Sources */,
 				4AC133922BDDA1E400FD1B58 /* AvatarViewer.swift in Sources */,
 				4A9F9B132BEA546200E5AAF0 /* StorageManager.swift in Sources */,
+				4AB693FE2BEC07D700B36118 /* LocationSearchView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
