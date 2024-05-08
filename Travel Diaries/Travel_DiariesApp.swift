@@ -7,6 +7,7 @@
 
 import SwiftUI
 import Firebase
+import SwiftData
 
 class AppDelegate: NSObject, UIApplicationDelegate {
     func application(_ application: UIApplication,
@@ -30,7 +31,11 @@ struct Travel_DiariesApp: App {
     
     var body: some Scene {
         WindowGroup {
-            ContentsView()
+            LocationSearchView()
+                .environmentObject(PostViewModel())
+//            ContentsView()
+                .modelContainer(for: LocationSearchHistory.self)
+            
         }
     }
 }
