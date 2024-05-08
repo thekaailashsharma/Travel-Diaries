@@ -23,6 +23,10 @@ final class PhotoPickerViewController: ObservableObject {
         }
     }
     
+    func removeSelection() {
+        selectedImage = nil
+    }
+    
     init() {
         self.notAccessGranted = !checkPhotoLibraryAuthorization()
     }

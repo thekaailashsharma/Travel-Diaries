@@ -10,6 +10,7 @@ import SwiftData
 
 struct LocationSearchView: View {
     
+    @Binding var isVisible: Bool
     @EnvironmentObject var postViewModel: PostViewModel
     @FocusState var isKeyBoardActive: Bool
     
@@ -58,12 +59,18 @@ struct LocationSearchView: View {
                     if locationResponse.items?.count != 0 {
                         ForEach(locationResponse.items ?? [], id: \.self) { location in
                             Button {
-                                saveLocation(item: LocationSearchHistory(
-                                    date: Date(),
-                                    latitude: location.position?.lat ?? 0.0,
-                                    longitude: location.position?.lng ?? 0.0,
-                                    address: location.address?.label ?? "")
-                                )
+                                Task {
+                                    if let address = location.address?.label {
+                                        saveLocation(item: LocationSearchHistory(
+                                            date: Date(),
+                                            latitude: location.position?.lat ?? 0.0,
+                                            longitude: location.position?.lng ?? 0.0,
+                                            address: address)
+                                        )
+                                        postViewModel.selectedLocation = address
+                                        isVisible = false
+                                    }
+                                }
                             } label: {
                                 Text(location.address?.label ?? "")
                                     .font(.customFont(.poppins, size: 15))
@@ -145,7 +152,7 @@ struct LocationSearchView: View {
 }
     
 
-#Preview {
-    LocationSearchView()
-        .environmentObject(PostViewModel())
-}
+//#Preview {
+//    LocationSearchView()
+//        .environmentObject(PostViewModel())
+//}

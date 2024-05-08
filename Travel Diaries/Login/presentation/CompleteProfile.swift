@@ -69,7 +69,7 @@ struct CompleteProfileView: View {
                     
                     TravelPreferncesCard() {
                         withAnimation(.bouncy(duration: 1)) {
-                            currentProfileScreen = .travelPhotos
+                            currentProfileScreen = .travelQuestions
                         }
                     }
                     .environmentObject(loginViewModel)
@@ -93,7 +93,6 @@ enum CompleteProfileValues: String {
     case profilePictureUrl = "Profile Picture"
     case gender = "Gender"
     case travelPreferences = "Travel Preferences"
-    case travelPhotos = "Add some Photos"
     case travelQuestions = "More About You"
 }
 
