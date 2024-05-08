@@ -19,6 +19,11 @@ class PostViewModel: ObservableObject {
     @Published var searchText: String = ""
     @Published var isSearching: Bool = false
     
+    @Published var title: String = ""
+    @Published var description: String = ""
+    @Published var selectedLocation: String = ""
+    @Published var selectedHashtag: String = ""
+    
     func fetchLocation(for query: String) {
         self.isSearching = true
         apiManager.fetchLocation(for: query)

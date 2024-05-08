@@ -33,6 +33,8 @@
 		4AB693F92BEBEF9200B36118 /* PostViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AB693F82BEBEF9200B36118 /* PostViewModel.swift */; };
 		4AB693FC2BEBFE1700B36118 /* LocationSearchHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AB693FB2BEBFE1700B36118 /* LocationSearchHistory.swift */; };
 		4AB693FE2BEC07D700B36118 /* LocationSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AB693FD2BEC07D700B36118 /* LocationSearchView.swift */; };
+		4AB694002BEC2B9600B36118 /* StringExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AB693FF2BEC2B9600B36118 /* StringExt.swift */; };
+		4AB694022BEC2F3F00B36118 /* AddPosts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AB694012BEC2F3F00B36118 /* AddPosts.swift */; };
 		4AC133802BDD800D00FD1B58 /* Travel_DiariesApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AC1337F2BDD800D00FD1B58 /* Travel_DiariesApp.swift */; };
 		4AC133822BDD800D00FD1B58 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AC133812BDD800D00FD1B58 /* ContentView.swift */; };
 		4AC133842BDD800F00FD1B58 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4AC133832BDD800F00FD1B58 /* Assets.xcassets */; };
@@ -71,6 +73,8 @@
 		4AB693F82BEBEF9200B36118 /* PostViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewModel.swift; sourceTree = "<group>"; };
 		4AB693FB2BEBFE1700B36118 /* LocationSearchHistory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationSearchHistory.swift; sourceTree = "<group>"; };
 		4AB693FD2BEC07D700B36118 /* LocationSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationSearchView.swift; sourceTree = "<group>"; };
+		4AB693FF2BEC2B9600B36118 /* StringExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExt.swift; sourceTree = "<group>"; };
+		4AB694012BEC2F3F00B36118 /* AddPosts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPosts.swift; sourceTree = "<group>"; };
 		4AC1337C2BDD800D00FD1B58 /* Travel Diaries.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Travel Diaries.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4AC1337F2BDD800D00FD1B58 /* Travel_DiariesApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Travel_DiariesApp.swift; sourceTree = "<group>"; };
 		4AC133812BDD800D00FD1B58 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -122,6 +126,7 @@
 				4AF2355E2BE19D6C001AFF19 /* GetGenericFirebaseee.swift */,
 				4A9F9B0C2BEA1AD600E5AAF0 /* CustomColors.swift */,
 				4A9F9B0E2BEA233F00E5AAF0 /* MetadataPhotoPicker.swift */,
+				4AB693FF2BEC2B9600B36118 /* StringExt.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -153,6 +158,7 @@
 				4A9F9B102BEA351D00E5AAF0 /* PermissionsCard.swift */,
 				4A9F9B162BEA661A00E5AAF0 /* GenderCard.swift */,
 				4A9F9B1B2BEA90F100E5AAF0 /* TravelPreferncesCard.swift */,
+				4AB694012BEC2F3F00B36118 /* AddPosts.swift */,
 			);
 			path = presentation;
 			sourceTree = "<group>";
@@ -375,6 +381,7 @@
 				4A9F9B192BEA8FC500E5AAF0 /* TravelPreferences.swift in Sources */,
 				4A58DA5C2BE02602005C962D /* CustomFont.swift in Sources */,
 				4A9F9B0F2BEA233F00E5AAF0 /* MetadataPhotoPicker.swift in Sources */,
+				4AB694022BEC2F3F00B36118 /* AddPosts.swift in Sources */,
 				4AF2355F2BE19D6C001AFF19 /* GetGenericFirebaseee.swift in Sources */,
 				4A58DA552BE02208005C962D /* CountryDictionary.swift in Sources */,
 				4A58DA722BE0396A005C962D /* LoginViewModel.swift in Sources */,
@@ -382,6 +389,7 @@
 				4AECCDF12BE7B21C00771DA6 /* PhotoPicker.swift in Sources */,
 				4AC133822BDD800D00FD1B58 /* ContentView.swift in Sources */,
 				4AC133802BDD800D00FD1B58 /* Travel_DiariesApp.swift in Sources */,
+				4AB694002BEC2B9600B36118 /* StringExt.swift in Sources */,
 				4AB693F52BEBEEAC00B36118 /* ApiManager.swift in Sources */,
 				4AC133922BDDA1E400FD1B58 /* AvatarViewer.swift in Sources */,
 				4A9F9B132BEA546200E5AAF0 /* StorageManager.swift in Sources */,
