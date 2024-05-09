@@ -19,7 +19,7 @@ class LoginViewModel: ObservableObject {
     @Published var profilePictureUrl: URL? = nil
     @Published var gender: Genders = .male
     @Published var preferencesList: [String] = []
-    @Published var travelQuestions: [[String: String]] = []
+    @Published var travelQuestions: [MyTravelQuestions] = []
     
     
     private var cancellables = Set<AnyCancellable>()
@@ -57,7 +57,10 @@ class LoginViewModel: ObservableObject {
     }
     
     func updateUser() async {
-        try? await UserManager.shared.updateUser(user: UserInfo(id: UUID(), phoneNumber: phoneNumber, userName: userName, name: name, profilePictureUrl: profilePictureUrl?.absoluteString, gender: gender))
+        Task {
+            try? await UserManager.shared.updateUser(user: UserInfo(id: UUID(), phoneNumber: phoneNumber, userName: userName, name: name, profilePictureUrl: profilePictureUrl?.absoluteString, gender: gender, travelPreferences: preferencesList, travelQuestions: travelQuestions))
+            try? await UserManager.shared.updateUserName(username: UserNames(userName: userName))
+        }
     }
     
 }

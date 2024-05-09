@@ -184,7 +184,7 @@ struct TravelQuestionsView: View {
                             currentQuestion = .third
                             isQuestionsViewOpen.toggle()
                         } label: {
-                            Text(question3 == "" ? "Pick Question 1" : question3)
+                            Text(question3 == "" ? "Pick Question 3" : question3)
                                 .font(.customFont(.poppins, size: 14))
                                 .foregroundStyle(Color.customColor(.yellow))
                                 .padding()
@@ -250,6 +250,7 @@ struct TravelQuestionsView: View {
                         .padding()
                     }
                     .padding()
+                    .padding(.bottom, 60)
                 }
             }
             .frame(maxHeight: UIScreen.main.bounds.height - 300, alignment: .top)
@@ -261,9 +262,9 @@ struct TravelQuestionsView: View {
                 
                 Button {
                     if answer1 != "" && answer2 != "" && answer3 != "" && question1 != "" && question2 != "" && question3 != "" {
-                        loginViewModel.travelQuestions.append([question1: answer1])
-                        loginViewModel.travelQuestions.append([question2: answer2])
-                        loginViewModel.travelQuestions.append([question3: answer3])
+                        loginViewModel.travelQuestions.append(MyTravelQuestions(question: question1, answer: answer1))
+                        loginViewModel.travelQuestions.append(MyTravelQuestions(question: question2, answer: answer2))
+                        loginViewModel.travelQuestions.append(MyTravelQuestions(question: question3, answer: answer3))
                         onClick()
                     }
                 } label: {

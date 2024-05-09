@@ -32,170 +32,183 @@ struct ContentsView: View {
     @State var progressText: String = "You will be redirected !!"
     @State var isOTPVisible: Bool = false
     @State var isLoading: Bool = false
+    @State var isVideoLoading: Bool = false
     @State var isLoginProfileVisible: Bool = false
     @State var isCompleteProfileVisible: Bool = false
     
+    @AppStorage("isLoggedIn") var isLoggedIn: Bool = false
+    @AppStorage("sessionPhoneNumber") var sessionPhoneNumber: String = ""
+    @AppStorage("sessionUserName") var sessionUserName: String = ""
+    
     var body: some View {
-        ZStack {
-            VideoBackgroundView(videoURL: URL(string: "https://firebasestorage.googleapis.com/v0/b/palmapi-b548f.appspot.com/o/aaw.mp4?alt=media&token=3859f136-a47a-4b5a-b079-b643c8ad43aa")!)
-                .frame(maxWidth: .infinity, maxHeight: .infinity)
-                .ignoresSafeArea()
-            
-            VStack {
-                Spacer()
-                RoundedRectangle(cornerRadius: 10.0)
-                    .fill(LinearGradient(colors: [.black, .black.opacity(0.8), .black.opacity(0.7)], startPoint: .bottom, endPoint: .top))
-                    .frame(height: UIScreen.main.bounds.height / 2.4)
-                    .overlay {
-                        VStack {
-                            ZStack {
-                                
-                                HStack {
-                                    Circle()
-                                        .fill(Color.purple.gradient) // Circle color
-                                        .frame(width: 120, height: 120) // Circle size
-                                        .overlay(
-                                            Image("me1")
-                                                .resizable()
-                                                .aspectRatio(contentMode: .fit)
-                                                .frame(width: 120, height: 120) // Image size
-                                                .foregroundColor(.white) // Image color
-                                        )
-                                        .offset(x: -25 ,
-                                                y:-20 )
+        if !isLoggedIn {
+            ZStack {
+                VideoBackgroundView(isLoading: $isVideoLoading, videoURL: URL(string: "https://firebasestorage.googleapis.com/v0/b/palmapi-b548f.appspot.com/o/aaw.mp4?alt=media&token=3859f136-a47a-4b5a-b079-b643c8ad43aa")!)
+                    .frame(maxWidth: .infinity, maxHeight: .infinity)
+                    .ignoresSafeArea()
+                    .blur(radius: isVideoLoading ? 10 : 0)
+                
+                VStack {
+                    Spacer()
+                    RoundedRectangle(cornerRadius: 10.0)
+                        .fill(LinearGradient(colors: [.black, .black.opacity(0.8), .black.opacity(0.7)], startPoint: .bottom, endPoint: .top))
+                        .frame(height: UIScreen.main.bounds.height / 2.4)
+                        .overlay {
+                            VStack {
+                                ZStack {
                                     
-                                    Circle()
-                                        .fill(Color.red.gradient) // Circle color
-                                        .frame(width: 120, height: 120) // Circle size
-                                        .overlay(
-                                            Image("me2")
-                                                .resizable()
-                                                .aspectRatio(contentMode: .fit)
-                                                .frame(width: 120, height: 120) // Image size
-                                                .foregroundColor(.white) // Image color
-                                        )
-                                        .offset(x: 25 ,
-                                                y:-20 )
-                                }
-                                
-                                Circle()
-                                    .fill(Color.yellow) // Circle color
-                                    .frame(width: 120, height: 120) // Circle size
-                                    .overlay(
-                                        Image("me")
-                                            .resizable()
-                                            .aspectRatio(contentMode: .fit)
-                                            .frame(width: 120, height: 120) // Image size
-                                            .foregroundColor(.white) // Image color
-                                    )
-                            }
-                            .offset(y: -35)
-                            Spacer()
-                            
-                            ZStack {
-                                VStack {
-                                    VStack {
-                                        Text("Travel Diaries")
-                                            .font(.customFont(.frosting, size: 30))
-                                            .foregroundStyle(.white)
+                                    HStack {
+                                        Circle()
+                                            .fill(Color.purple.gradient) // Circle color
+                                            .frame(width: 120, height: 120) // Circle size
+                                            .overlay(
+                                                Image("me1")
+                                                    .resizable()
+                                                    .aspectRatio(contentMode: .fit)
+                                                    .frame(width: 120, height: 120) // Image size
+                                                    .foregroundColor(.white) // Image color
+                                            )
+                                            .offset(x: -25 ,
+                                                    y:-20 )
                                         
-                                        Text("An app you never asked for")
-                                            .font(.customFont(.poppins, size: 12))
-                                            .foregroundStyle(.white)
+                                        Circle()
+                                            .fill(Color.red.gradient) // Circle color
+                                            .frame(width: 120, height: 120) // Circle size
+                                            .overlay(
+                                                Image("me2")
+                                                    .resizable()
+                                                    .aspectRatio(contentMode: .fit)
+                                                    .frame(width: 120, height: 120) // Image size
+                                                    .foregroundColor(.white) // Image color
+                                            )
+                                            .offset(x: 25 ,
+                                                    y:-20 )
                                     }
                                     
-                                    Spacer()
-                                    
-                                    Button(action: {
-                                        isLoginProfileVisible = true
-                                    }, label: {
-                                        Text("Take Me In")
-                                            .font(.customFont(.poppins, size: 20))
-                                            .foregroundStyle(.white)
-                                            .padding()
-                                            .frame(width: 300)
-                                            .background(Color(uiColor: .black).opacity(0.6))
-                                            .clipShape(RoundedRectangle(cornerRadius: 10))
-                                            .overlay {
-                                                RoundedRectangle(cornerRadius: 10)
-                                                    .stroke(.white.opacity(0.5))
-                                            }
+                                    Circle()
+                                        .fill(Color.yellow) // Circle color
+                                        .frame(width: 120, height: 120) // Circle size
+                                        .overlay(
+                                            Image("me")
+                                                .resizable()
+                                                .aspectRatio(contentMode: .fit)
+                                                .frame(width: 120, height: 120) // Image size
+                                                .foregroundColor(.white) // Image color
+                                        )
+                                }
+                                .offset(y: -35)
+                                Spacer()
+                                
+                                ZStack {
+                                    VStack {
+                                        VStack {
+                                            Text("Travel Diaries")
+                                                .font(.customFont(.frosting, size: 30))
+                                                .foregroundStyle(.white)
+                                            
+                                            Text("An app you never asked for")
+                                                .font(.customFont(.poppins, size: 12))
+                                                .foregroundStyle(.white)
+                                        }
                                         
-                                    })
+                                        Spacer()
+                                        
+                                        Button(action: {
+                                            isLoginProfileVisible = true
+                                        }, label: {
+                                            Text("Take Me In")
+                                                .font(.customFont(.poppins, size: 20))
+                                                .foregroundStyle(.white)
+                                                .padding()
+                                                .frame(width: 300)
+                                                .background(Color(uiColor: .black).opacity(0.6))
+                                                .clipShape(RoundedRectangle(cornerRadius: 10))
+                                                .overlay {
+                                                    RoundedRectangle(cornerRadius: 10)
+                                                        .stroke(.white.opacity(0.5))
+                                                }
+                                            
+                                        })
+                                        
+                                        Spacer()
+                                        
+                                        
+                                        //                                    EnterPhoneNumber(number: $phoneNumber, countryCode: $countryCode, smsCode: $smsCode, isOTPVisble: $isOTPVisible) {
+                                        //                                        if !isOTPVisible {
+                                        //                                            isLoading = true
+                                        //                                            authManager.startAuth(phoneNumber: "+\(getCountryCode(countryCode))\(phoneNumber)") { value in
+                                        //                                                isLoading = false
+                                        //                                                if value {
+                                        //                                                    withAnimation(.spring.delay(1)) {
+                                        //                                                        isOTPVisible.toggle()
+                                        //                                                    }
+                                        //                                                }
+                                        //                                            }
+                                        //                                        } else {
+                                        //                                            isLoading = true
+                                        //                                            progressText = "Please Wait"
+                                        //                                            authManager.verifyCode(smsCode: smsCode) { value in
+                                        //                                                isLoading = false
+                                        //                                                if value {
+                                        //                                                    authManager.getLoginStatus()
+                                        //                                                    print("Hurray")
+                                        //                                                }
+                                        //                                            }
+                                        //                                        }
+                                        //
+                                        //                                    }
+                                    }
+                                    //                                .rotation3DEffect(.degrees(isOTPVisible ? 0 : -180), axis: (x: 0, y: 1, z: 0))
+                                    //                                .scaleEffect(x: !isOTPVisible ? -1 : 1, y: 1)
+                                    //                                .animation(.spring, value: isOTPVisible)
                                     
-                                    Spacer()
-                                   
                                     
-//                                    EnterPhoneNumber(number: $phoneNumber, countryCode: $countryCode, smsCode: $smsCode, isOTPVisble: $isOTPVisible) {
-//                                        if !isOTPVisible {
-//                                            isLoading = true
-//                                            authManager.startAuth(phoneNumber: "+\(getCountryCode(countryCode))\(phoneNumber)") { value in
-//                                                isLoading = false
-//                                                if value {
-//                                                    withAnimation(.spring.delay(1)) {
-//                                                        isOTPVisible.toggle()
-//                                                    }
-//                                                }
-//                                            }
-//                                        } else {
-//                                            isLoading = true
-//                                            progressText = "Please Wait"
-//                                            authManager.verifyCode(smsCode: smsCode) { value in
-//                                                isLoading = false
-//                                                if value {
-//                                                    authManager.getLoginStatus()
-//                                                    print("Hurray")
-//                                                }
-//                                            }
-//                                        }
-//                                        
-//                                    }
+                                    
                                 }
-//                                .rotation3DEffect(.degrees(isOTPVisible ? 0 : -180), axis: (x: 0, y: 1, z: 0))
-//                                .scaleEffect(x: !isOTPVisible ? -1 : 1, y: 1)
-//                                .animation(.spring, value: isOTPVisible)
                                 
-                                
-                                
-                            }
-                            
-                            if isLoading {
-                                ProgressView {
-                                    Text(progressText)
-                                        .font(.customFont(.poppins, size: 25))
-                                        .foregroundStyle(.white)
+                                if isLoading {
+                                    ProgressView {
+                                        Text(progressText)
+                                            .font(.customFont(.poppins, size: 25))
+                                            .foregroundStyle(.white)
+                                    }
+                                    .animation(.bouncy, value: isLoading)
                                 }
-                                .animation(.bouncy, value: isLoading)
                             }
                         }
-                    }
-                    .blur(radius: isLoading ? 10: 0)
+                        .blur(radius: isLoading ? 10: 0)
+                }
+                .blur(radius: isVideoLoading ? 10 : 0)
+                
+                if isVideoLoading {
+                    ProgressView()
+                        .foregroundStyle(Color.customColor(.green))
+                }
+                
             }
-            
+            .edgesIgnoringSafeArea(.all)
+            .fullScreenCover(isPresented: $isLoginProfileVisible, content: {
+                LoginProfile(isCompleteProfileVisible: $isCompleteProfileVisible, isLoginProfileVisible: $isLoginProfileVisible)
+                    .environmentObject(authManager)
+                    .environmentObject(loginViewModel)
+                   
+            })
+            .fullScreenCover(isPresented: $isCompleteProfileVisible, content: {
+                CompleteProfileView(isCompleteProfileVisible: $isCompleteProfileVisible)
+                    .environmentObject(authManager)
+                    .environmentObject(loginViewModel)
+                    .environmentObject(storageManager)
+                   
+            })
+        } else {
+            HomeScreen()
         }
-        .edgesIgnoringSafeArea(.all)
-        .fullScreenCover(isPresented: $isLoginProfileVisible, content: {
-            LoginProfile(isCompleteProfileVisible: $isCompleteProfileVisible, isLoginProfileVisible: $isLoginProfileVisible)
-                .environmentObject(authManager)
-                .environmentObject(loginViewModel)
-            
-//            CompleteProfileView()
-////                .environmentObject(authManager)
-//                .environmentObject(loginViewModel)
-//                .environmentObject(storageManager)
-               
-        })
-        .fullScreenCover(isPresented: $isCompleteProfileVisible, content: {
-            CompleteProfileView(isCompleteProfileVisible: $isCompleteProfileVisible)
-                .environmentObject(authManager)
-                .environmentObject(loginViewModel)
-                .environmentObject(storageManager)
-               
-        })
     }
 }
 
 struct VideoBackgroundView: UIViewRepresentable {
+    
+    @Binding var isLoading: Bool
     let videoURL: URL
     
     func makeUIView(context: Context) -> UIView {
@@ -215,6 +228,9 @@ struct VideoBackgroundView: UIViewRepresentable {
         gradientLayer.frame = UIScreen.main.bounds
         view.layer.addSublayer(gradientLayer)
         
+        // Set isLoading to true initially
+        isLoading = true
+        
         
         // Play the video in loop
         player.play()
@@ -222,6 +238,10 @@ struct VideoBackgroundView: UIViewRepresentable {
         player.actionAtItemEnd = .none
         NotificationCenter.default.addObserver(forName: .AVPlayerItemDidPlayToEndTime, object: player.currentItem, queue: nil) { _ in
             player.seek(to: .zero)
+        }
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+            isLoading = false
         }
         
         return view
