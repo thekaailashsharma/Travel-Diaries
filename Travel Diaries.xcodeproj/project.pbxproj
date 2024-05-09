@@ -34,7 +34,10 @@
 		4AB693FC2BEBFE1700B36118 /* LocationSearchHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AB693FB2BEBFE1700B36118 /* LocationSearchHistory.swift */; };
 		4AB693FE2BEC07D700B36118 /* LocationSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AB693FD2BEC07D700B36118 /* LocationSearchView.swift */; };
 		4AB694002BEC2B9600B36118 /* StringExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AB693FF2BEC2B9600B36118 /* StringExt.swift */; };
-		4AB694022BEC2F3F00B36118 /* AddPosts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AB694012BEC2F3F00B36118 /* AddPosts.swift */; };
+		4AB694042BEC35E700B36118 /* TravelQuestionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AB694032BEC35E700B36118 /* TravelQuestionsView.swift */; };
+		4AB694072BEC51FE00B36118 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 4AB694062BEC51FE00B36118 /* Lottie */; };
+		4AB694092BEC52CB00B36118 /* confetti.lottie in Resources */ = {isa = PBXBuildFile; fileRef = 4AB694082BEC52CA00B36118 /* confetti.lottie */; };
+		4AB6940C2BEC531800B36118 /* LottieAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AB6940B2BEC531800B36118 /* LottieAnimation.swift */; };
 		4AC133802BDD800D00FD1B58 /* Travel_DiariesApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AC1337F2BDD800D00FD1B58 /* Travel_DiariesApp.swift */; };
 		4AC133822BDD800D00FD1B58 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AC133812BDD800D00FD1B58 /* ContentView.swift */; };
 		4AC133842BDD800F00FD1B58 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4AC133832BDD800F00FD1B58 /* Assets.xcassets */; };
@@ -74,7 +77,9 @@
 		4AB693FB2BEBFE1700B36118 /* LocationSearchHistory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationSearchHistory.swift; sourceTree = "<group>"; };
 		4AB693FD2BEC07D700B36118 /* LocationSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationSearchView.swift; sourceTree = "<group>"; };
 		4AB693FF2BEC2B9600B36118 /* StringExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExt.swift; sourceTree = "<group>"; };
-		4AB694012BEC2F3F00B36118 /* AddPosts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPosts.swift; sourceTree = "<group>"; };
+		4AB694032BEC35E700B36118 /* TravelQuestionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelQuestionsView.swift; sourceTree = "<group>"; };
+		4AB694082BEC52CA00B36118 /* confetti.lottie */ = {isa = PBXFileReference; lastKnownFileType = file; path = confetti.lottie; sourceTree = "<group>"; };
+		4AB6940B2BEC531800B36118 /* LottieAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieAnimation.swift; sourceTree = "<group>"; };
 		4AC1337C2BDD800D00FD1B58 /* Travel Diaries.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Travel Diaries.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4AC1337F2BDD800D00FD1B58 /* Travel_DiariesApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Travel_DiariesApp.swift; sourceTree = "<group>"; };
 		4AC133812BDD800D00FD1B58 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -97,6 +102,7 @@
 			files = (
 				4A58DA6A2BE03727005C962D /* FirebaseAppCheck in Frameworks */,
 				4A58DA682BE03727005C962D /* FirebaseAnalyticsSwift in Frameworks */,
+				4AB694072BEC51FE00B36118 /* Lottie in Frameworks */,
 				4A58DA6C2BE03727005C962D /* FirebaseCrashlytics in Frameworks */,
 				4AF235572BE1859F001AFF19 /* FirebaseFirestoreSwift in Frameworks */,
 				4A58DA662BE03727005C962D /* FirebaseAnalytics in Frameworks */,
@@ -127,6 +133,7 @@
 				4A9F9B0C2BEA1AD600E5AAF0 /* CustomColors.swift */,
 				4A9F9B0E2BEA233F00E5AAF0 /* MetadataPhotoPicker.swift */,
 				4AB693FF2BEC2B9600B36118 /* StringExt.swift */,
+				4AB6940B2BEC531800B36118 /* LottieAnimation.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -158,7 +165,7 @@
 				4A9F9B102BEA351D00E5AAF0 /* PermissionsCard.swift */,
 				4A9F9B162BEA661A00E5AAF0 /* GenderCard.swift */,
 				4A9F9B1B2BEA90F100E5AAF0 /* TravelPreferncesCard.swift */,
-				4AB694012BEC2F3F00B36118 /* AddPosts.swift */,
+				4AB694032BEC35E700B36118 /* TravelQuestionsView.swift */,
 			);
 			path = presentation;
 			sourceTree = "<group>";
@@ -218,6 +225,7 @@
 			isa = PBXGroup;
 			children = (
 				4AC1338F2BDD9B8B00FD1B58 /* avatar3.usdz */,
+				4AB694082BEC52CA00B36118 /* confetti.lottie */,
 				4AC1337E2BDD800D00FD1B58 /* Travel Diaries */,
 				4AC1337D2BDD800D00FD1B58 /* Products */,
 				4A58DA622BE036F0005C962D /* Frameworks */,
@@ -304,6 +312,7 @@
 				4AF235542BE1859F001AFF19 /* FirebaseFirestore */,
 				4AF235562BE1859F001AFF19 /* FirebaseFirestoreSwift */,
 				4A9F9B142BEA547700E5AAF0 /* FirebaseStorage */,
+				4AB694062BEC51FE00B36118 /* Lottie */,
 			);
 			productName = "Travel Diaries";
 			productReference = 4AC1337C2BDD800D00FD1B58 /* Travel Diaries.app */;
@@ -335,6 +344,7 @@
 			mainGroup = 4AC133732BDD800C00FD1B58;
 			packageReferences = (
 				4A58DA612BE036D0005C962D /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				4AB694052BEC51FD00B36118 /* XCRemoteSwiftPackageReference "lottie-ios" */,
 			);
 			productRefGroup = 4AC1337D2BDD800D00FD1B58 /* Products */;
 			projectDirPath = "";
@@ -351,6 +361,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4A58DA582BE024E8005C962D /* frosting.ttf in Resources */,
+				4AB694092BEC52CB00B36118 /* confetti.lottie in Resources */,
 				4A58DA6F2BE038F2005C962D /* GoogleService-Info.plist in Resources */,
 				4AC133872BDD800F00FD1B58 /* Preview Assets.xcassets in Resources */,
 				4AC133902BDD9B8B00FD1B58 /* avatar3.usdz in Resources */,
@@ -379,9 +390,9 @@
 				4A9F9B172BEA661A00E5AAF0 /* GenderCard.swift in Sources */,
 				4AB693FC2BEBFE1700B36118 /* LocationSearchHistory.swift in Sources */,
 				4A9F9B192BEA8FC500E5AAF0 /* TravelPreferences.swift in Sources */,
+				4AB694042BEC35E700B36118 /* TravelQuestionsView.swift in Sources */,
 				4A58DA5C2BE02602005C962D /* CustomFont.swift in Sources */,
 				4A9F9B0F2BEA233F00E5AAF0 /* MetadataPhotoPicker.swift in Sources */,
-				4AB694022BEC2F3F00B36118 /* AddPosts.swift in Sources */,
 				4AF2355F2BE19D6C001AFF19 /* GetGenericFirebaseee.swift in Sources */,
 				4A58DA552BE02208005C962D /* CountryDictionary.swift in Sources */,
 				4A58DA722BE0396A005C962D /* LoginViewModel.swift in Sources */,
@@ -391,6 +402,7 @@
 				4AC133802BDD800D00FD1B58 /* Travel_DiariesApp.swift in Sources */,
 				4AB694002BEC2B9600B36118 /* StringExt.swift in Sources */,
 				4AB693F52BEBEEAC00B36118 /* ApiManager.swift in Sources */,
+				4AB6940C2BEC531800B36118 /* LottieAnimation.swift in Sources */,
 				4AC133922BDDA1E400FD1B58 /* AvatarViewer.swift in Sources */,
 				4A9F9B132BEA546200E5AAF0 /* StorageManager.swift in Sources */,
 				4AB693FE2BEC07D700B36118 /* LocationSearchView.swift in Sources */,
@@ -615,6 +627,14 @@
 				minimumVersion = 10.24.0;
 			};
 		};
+		4AB694052BEC51FD00B36118 /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/airbnb/lottie-ios";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.4.3;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -647,6 +667,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 4A58DA612BE036D0005C962D /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseStorage;
+		};
+		4AB694062BEC51FE00B36118 /* Lottie */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4AB694052BEC51FD00B36118 /* XCRemoteSwiftPackageReference "lottie-ios" */;
+			productName = Lottie;
 		};
 		4AF235542BE1859F001AFF19 /* FirebaseFirestore */ = {
 			isa = XCSwiftPackageProductDependency;
