@@ -26,6 +26,10 @@ struct CompleteProfileView: View {
     @State var isFinalLoading: Bool = false
     @State var isLottieVisible: Bool = false
     
+    @AppStorage("isLoggedIn") var isLoggedIn: Bool = false
+    @AppStorage("sessionPhoneNumber") var sessionPhoneNumber: String = ""
+    @AppStorage("sessionUserName") var sessionUserName: String = ""
+    
     var body: some View {
         NavigationStack {
             ZStack {
@@ -112,8 +116,11 @@ struct CompleteProfileView: View {
                             DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
                                 isFinalLoading = false
                                 isLottieVisible = true
-                                DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
+                                DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
                                     isCompleteProfileVisible = false
+                                    isLoggedIn = true
+                                    sessionPhoneNumber = loginViewModel.phoneNumber
+                                    sessionUserName = loginViewModel.userName
                                 }
                             }
                         }
@@ -136,9 +143,7 @@ struct CompleteProfileView: View {
                 if isLottieVisible {
                     VStack {
                         MyLottieAnimation(url: Bundle.main.url(forResource: "confetti", withExtension: "lottie")!)
-                            .offset(x: 0, y: -20)
                             .scaledToFill()
-                            .frame(width: 80, height: 80)
                     }
                 }
                 

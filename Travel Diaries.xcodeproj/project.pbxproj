@@ -44,6 +44,7 @@
 		4AC133872BDD800F00FD1B58 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4AC133862BDD800F00FD1B58 /* Preview Assets.xcassets */; };
 		4AC133902BDD9B8B00FD1B58 /* avatar3.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 4AC1338F2BDD9B8B00FD1B58 /* avatar3.usdz */; };
 		4AC133922BDDA1E400FD1B58 /* AvatarViewer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AC133912BDDA1E400FD1B58 /* AvatarViewer.swift */; };
+		4AE978252BECD0AF002AA455 /* HomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE978242BECD0AF002AA455 /* HomeScreen.swift */; };
 		4AECCDF12BE7B21C00771DA6 /* PhotoPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AECCDF02BE7B21C00771DA6 /* PhotoPicker.swift */; };
 		4AF235532BE11AB6001AFF19 /* LoginProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AF235522BE11AB6001AFF19 /* LoginProfile.swift */; };
 		4AF235552BE1859F001AFF19 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 4AF235542BE1859F001AFF19 /* FirebaseFirestore */; };
@@ -87,6 +88,7 @@
 		4AC133862BDD800F00FD1B58 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		4AC1338F2BDD9B8B00FD1B58 /* avatar3.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = avatar3.usdz; sourceTree = "<group>"; };
 		4AC133912BDDA1E400FD1B58 /* AvatarViewer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarViewer.swift; sourceTree = "<group>"; };
+		4AE978242BECD0AF002AA455 /* HomeScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreen.swift; sourceTree = "<group>"; };
 		4AECCDF02BE7B21C00771DA6 /* PhotoPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoPicker.swift; sourceTree = "<group>"; };
 		4AF235522BE11AB6001AFF19 /* LoginProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginProfile.swift; sourceTree = "<group>"; };
 		4AF235592BE18640001AFF19 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -245,6 +247,7 @@
 			children = (
 				4A58DA6E2BE038F2005C962D /* GoogleService-Info.plist */,
 				4A58DA592BE0256E005C962D /* Travel-Diaries-Info.plist */,
+				4AE978232BECD09F002AA455 /* Home */,
 				4AB693F62BEBEF6600B36118 /* Post */,
 				4AB693ED2BEBEC4500B36118 /* ApiManager */,
 				4AF2355D2BE18D21001AFF19 /* Manager */,
@@ -266,6 +269,14 @@
 				4AC133862BDD800F00FD1B58 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		4AE978232BECD09F002AA455 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				4AE978242BECD0AF002AA455 /* HomeScreen.swift */,
+			);
+			path = Home;
 			sourceTree = "<group>";
 		};
 		4AF235582BE1862A001AFF19 /* Models */ = {
@@ -403,6 +414,7 @@
 				4AB694002BEC2B9600B36118 /* StringExt.swift in Sources */,
 				4AB693F52BEBEEAC00B36118 /* ApiManager.swift in Sources */,
 				4AB6940C2BEC531800B36118 /* LottieAnimation.swift in Sources */,
+				4AE978252BECD0AF002AA455 /* HomeScreen.swift in Sources */,
 				4AC133922BDDA1E400FD1B58 /* AvatarViewer.swift in Sources */,
 				4A9F9B132BEA546200E5AAF0 /* StorageManager.swift in Sources */,
 				4AB693FE2BEC07D700B36118 /* LocationSearchView.swift in Sources */,

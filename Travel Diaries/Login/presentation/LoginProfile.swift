@@ -23,6 +23,10 @@ struct LoginProfile: View {
     @State var progressText: String = "You will be redirected !!"
     @State var isLoading: Bool = false
     @State var currentProfileScreen: LoginProfileValues = .phoneNumber
+    
+    @AppStorage("isLoggedIn") var isLoggedIn: Bool = false
+    @AppStorage("sessionPhoneNumber") var sessionPhoneNumber: String = ""
+    @AppStorage("sessionUserName") var sessionUserName: String = ""
 
     var body: some View {
         NavigationStack {
@@ -59,7 +63,12 @@ struct LoginProfile: View {
                                     print("Hurray")
 
                                     if loginViewModel.allUsers.contains(where: {$0.phoneNumber == phoneNumber}) {
-                                        isCompleteProfileVisible = false
+                                        if let usn = loginViewModel.allUsers.first(where: {$0.phoneNumber == phoneNumber}) {
+                                            isCompleteProfileVisible = false
+                                            isLoggedIn = true
+                                            sessionPhoneNumber = phoneNumber
+                                            sessionUserName = usn.userName
+                                        }
                                     } else {
                                         isCompleteProfileVisible = true
                                     }
@@ -123,6 +132,7 @@ struct CustomTextField: View {
                 .keyboardType(keyboardType)
                 .focused($isKeyBoardActive)
                 .onSubmit {
+                    isKeyBoardActive = false
                     onClick()
                 }
                 .font(.customFont(.poppins, size: 18))
@@ -141,6 +151,7 @@ struct CustomTextField: View {
             }
             Spacer()
             Button(action: {
+                isKeyBoardActive = false
                 onClick()
             }, label: {
                 Text("Proceed Ahead")

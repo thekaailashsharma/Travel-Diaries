@@ -18,8 +18,7 @@ struct UserInfo: Codable, Identifiable {
     let name: String
     let profilePictureUrl: String?
     let gender: Genders
-    var travelPreferences: [TravelPreference] = []
-    var travelPhotos: [String] = []
+    var travelPreferences: [String] = []
     var travelQuestions: [MyTravelQuestions] = []
 }
 
@@ -81,40 +80,5 @@ struct TravelQuestions: Codable, Hashable {
             return []
         }
     }
-}
-
-
-
-
-enum TravelPreference: String, CaseIterable, Codable {
-    case beaches = "Beaches"
-    case mountains = "Mountains"
-    case cityLife = "City Life"
-    case countryside = "Countryside"
-    case adventureSports = "Adventure Sports"
-    case historicalSites = "Historical Sites"
-    case wildlifeSafari = "Wildlife Safari"
-    case hiking = "Hiking"
-    case camping = "Camping"
-    case roadTrips = "Road Trips"
-    case culturalExperiences = "Cultural Experiences"
-    case foodExploration = "Food Exploration"
-    case islandHopping = "Island Hopping"
-    case skiingSnowboarding = "Skiing/Snowboarding"
-    case spaRetreats = "Spa Retreats"
-    case tropicalGetaways = "Tropical Getaways"
-    case wineTasting = "Wine Tasting"
-    case architectureTourism = "Architecture Tourism"
-    case photographyExcursions = "Photography Excursions"
-    case artGalleries = "Art Galleries"
-    case musicFestivals = "Music Festivals"
-    case scubaDiving = "Scuba Diving"
-    case snorkeling = "Snorkeling"
-    case kayakingCanoeing = "Kayaking/Canoeing"
-    case hotAirBallooning = "Hot Air Ballooning"
-    case horsebackRiding = "Horseback Riding"
-    case yogaRetreats = "Yoga Retreats"
-    case spiritualJourneys = "Spiritual Journeys"
-    case luxuryTravel = "Luxury Travel"
 }
 
