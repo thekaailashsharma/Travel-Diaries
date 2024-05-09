@@ -175,20 +175,21 @@ struct ContentsView: View {
         }
         .edgesIgnoringSafeArea(.all)
         .fullScreenCover(isPresented: $isLoginProfileVisible, content: {
-//            LoginProfile(isCompleteProfileVisible: $isCompleteProfileVisible, isLoginProfileVisible: $isLoginProfileVisible)
-//                .environmentObject(authManager)
-//                .environmentObject(loginViewModel)
-            
-            CompleteProfileView()
-//                .environmentObject(authManager)
+            LoginProfile(isCompleteProfileVisible: $isCompleteProfileVisible, isLoginProfileVisible: $isLoginProfileVisible)
+                .environmentObject(authManager)
                 .environmentObject(loginViewModel)
-                .environmentObject(storageManager)
+            
+//            CompleteProfileView()
+////                .environmentObject(authManager)
+//                .environmentObject(loginViewModel)
+//                .environmentObject(storageManager)
                
         })
         .fullScreenCover(isPresented: $isCompleteProfileVisible, content: {
-            CompleteProfileView()
+            CompleteProfileView(isCompleteProfileVisible: $isCompleteProfileVisible)
                 .environmentObject(authManager)
                 .environmentObject(loginViewModel)
+                .environmentObject(storageManager)
                
         })
     }

@@ -10,14 +10,16 @@ import FirebaseAuth
 import Combine
 
 @MainActor
-final class LoginViewModel: ObservableObject {
+class LoginViewModel: ObservableObject {
     
     
     @Published var phoneNumber: String = ""
     @Published var userName: String = ""
+    @Published var name: String = ""
     @Published var profilePictureUrl: URL? = nil
     @Published var gender: Genders = .male
     @Published var preferencesList: [String] = []
+    @Published var travelQuestions: [[String: String]] = []
     
     
     private var cancellables = Set<AnyCancellable>()
@@ -52,6 +54,10 @@ final class LoginViewModel: ObservableObject {
             }
             .store(in: &cancellables)
 
+    }
+    
+    func updateUser() async {
+        try? await UserManager.shared.updateUser(user: UserInfo(id: UUID(), phoneNumber: phoneNumber, userName: userName, name: name, profilePictureUrl: profilePictureUrl?.absoluteString, gender: gender))
     }
     
 }
@@ -120,10 +126,4 @@ class AuthManager : ObservableObject {
             completion(true)
         }
     }
-}
-
-enum Genders: String {
-    case male = "Male"
-    case female = "Female"
-    case other = "other"
 }

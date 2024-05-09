@@ -31,12 +31,7 @@ struct Travel_DiariesApp: App {
     
     var body: some Scene {
         WindowGroup {
-            PostScreen(onClick: {
-                
-            })
-            .environmentObject(PostViewModel())
-            .environmentObject(PhotoPickerViewController())
-//            ContentsView()
+            ContentsView()
                 .modelContainer(for: LocationSearchHistory.self)
             
         }

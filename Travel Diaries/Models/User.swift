@@ -17,20 +17,25 @@ struct UserInfo: Codable, Identifiable {
     let userName: String
     let name: String
     let profilePictureUrl: String?
-    let gender: Gender
+    let gender: Genders
     var travelPreferences: [TravelPreference] = []
     var travelPhotos: [String] = []
-    var travelQuestions: [TravelQuestions] = []
+    var travelQuestions: [MyTravelQuestions] = []
 }
 
-enum Gender: String, Codable {
+struct MyTravelQuestions: Codable {
+    let question: String
+    let answer: String
+}
+
+enum Genders: String, Codable {
     case male = "Male"
     case female = "Female"
     case other = "Other"
 }
 
-struct TravelQuestions: Codable {
-    enum AboutMeSection: String, CaseIterable {
+struct TravelQuestions: Codable, Hashable {
+    enum AboutMeSection: String, CaseIterable, Hashable {
         case winMeOver = "The way to win me over is"
         case typicalSunday = "Typical Sunday"
         case favoriteFood = "Favorite Food"
@@ -38,7 +43,7 @@ struct TravelQuestions: Codable {
         case travelStyle = "Travel Style"
     }
     
-    enum StoryTimeSection: String, CaseIterable {
+    enum StoryTimeSection: String, CaseIterable, Hashable {
         case mostMemorableTrip = "Most Memorable Trip"
         case travelMishap = "Worst Travel Mishap"
         case unexpectedAdventure = "Unexpected Adventure"
@@ -46,7 +51,7 @@ struct TravelQuestions: Codable {
         case lessonLearned = "Biggest Lesson Learned"
     }
     
-    enum BucketListSection: String, CaseIterable {
+    enum BucketListSection: String, CaseIterable, Hashable {
         case topDestination = "Top Bucket List Destination"
         case ultimateAdventure = "Ultimate Adventure Goal"
         case dreamActivity = "Dream Activity"
@@ -54,7 +59,7 @@ struct TravelQuestions: Codable {
         case upcomingTrip = "Upcoming Trip"
     }
     
-    enum FavoritesSection: String, CaseIterable {
+    enum FavoritesSection: String, CaseIterable, Hashable {
         case favoriteDestination = "Favorite Travel Destination"
         case mustHaveItem = "Must-Have Travel Item"
         case travelBook = "Favorite Travel Book"

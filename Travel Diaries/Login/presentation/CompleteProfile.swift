@@ -10,17 +10,21 @@ import PhotosUI
 
 struct CompleteProfileView: View {
     
+    @Binding var isCompleteProfileVisible: Bool
+    
     @EnvironmentObject var loginViewModel: LoginViewModel
     @EnvironmentObject var storageManager: StorageManager
     @State private var name: String = ""
     @State var isUsernameTaken: Bool = false
-    @State private var currentProfileScreen: CompleteProfileValues = .name
+    @State private var currentProfileScreen: CompleteProfileValues = .userName
     @State private var selection = 0
     
     @State var selectedImage: UIImage? = nil
     @State var date: Date? = nil
     @State var location: CLLocationCoordinate2D? = nil
     @State var isLoading: Bool = false
+    @State var isFinalLoading: Bool = false
+    @State var isLottieVisible: Bool = false
     
     var body: some View {
         NavigationStack {
@@ -40,9 +44,34 @@ struct CompleteProfileView: View {
                             } else {
                                 isUsernameTaken = false
                                 withAnimation(.bouncy(duration: 1)) {
-                                    currentProfileScreen = .profilePictureUrl
+                                    currentProfileScreen = .name
                                 }
                             }
+                        }
+                        
+                        Text(isUsernameTaken ? "Username Not Available" : "Username Available")
+                            .font(.customFont(.poppins, size: 15))
+                            .foregroundStyle(isUsernameTaken ? .red : .green)
+                        
+                        
+                    }
+                    .tag(CompleteProfileValues.userName)
+                    
+                    VStack {
+                        
+                        Image(systemName: "person.icloud")
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(width: 120, height: 120)
+                            .foregroundColor(Color.customColor(.green).opacity(0.6))
+                        
+                        CustomTextField(textValue: $loginViewModel.name, keyboardType: .default, label: "Enter Your Name") {
+                           
+                               
+                                withAnimation(.bouncy(duration: 1)) {
+                                    currentProfileScreen = .profilePictureUrl
+                                }
+                            
                         }
                         
                         Text(isUsernameTaken ? "Username Not Available" : "Username Available")
@@ -76,10 +105,42 @@ struct CompleteProfileView: View {
                     .tag(CompleteProfileValues.travelPreferences)
                     
                     
-                    
-                    
+                    TravelQuestionsView() {
+                        Task {
+                            isFinalLoading = true
+                            await loginViewModel.updateUser()
+                            DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                                isFinalLoading = false
+                                isLottieVisible = true
+                                DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
+                                    isCompleteProfileVisible = false
+                                }
+                            }
+                        }
+                    }
+                    .tag(CompleteProfileValues.travelQuestions)
                 }
+                .blur(radius: isFinalLoading ? 10 : 0)
                 .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
+                .onAppear {
+                      UIScrollView.appearance().isScrollEnabled = false
+                }
+                
+                if isFinalLoading {
+                    VStack {
+                       ProgressView()
+                            .foregroundStyle(Color.customColor(.green).opacity(0.5))
+                    }
+                }
+                
+                if isLottieVisible {
+                    VStack {
+                        MyLottieAnimation(url: Bundle.main.url(forResource: "confetti", withExtension: "lottie")!)
+                            .offset(x: 0, y: -20)
+                            .scaledToFill()
+                            .frame(width: 80, height: 80)
+                    }
+                }
                 
             }
             .navigationTitle(currentProfileScreen.rawValue)
@@ -90,6 +151,7 @@ struct CompleteProfileView: View {
 
 enum CompleteProfileValues: String {
     case name = "Name"
+    case userName = "UserName"
     case profilePictureUrl = "Profile Picture"
     case gender = "Gender"
     case travelPreferences = "Travel Preferences"
