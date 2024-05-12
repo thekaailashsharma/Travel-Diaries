@@ -215,24 +215,44 @@ struct CreatePostScreen: View {
                     ToolbarItem(placement: .topBarTrailing) {
                         Button(action: {
                             Task {
-                                if let user = loginViewModel.currentUser,let userLocation = postViewModel.location, let imageSelection = photoPicker.selectedImage {
+                                if let user = loginViewModel.currentUser,
+                                   let userLocation = postViewModel.location,
+                                   let imageSelection = photoPicker.selectedImage {
+                                    
                                     isPosting = true
-                                    storageManager.upload(image: imageSelection, path: "AllPosts/\(user.phoneNumber)/\(UUID().description)")
-                                    try? await loginViewModel.updatePost(post: PostsModel(
-                                        user: user,
-                                        timeStamp: Date(),
-                                        title: postViewModel.title,
-                                        description: postViewModel.description,
-                                        location: userLocation,
-                                        likes: 0,
-                                        comments: [],
-                                        imageUrl: storageManager.uploadedImageUrl.debugDescription,
-                                        impressions: 0)
+                                    
+                                    // Upload the image
+                                    storageManager.upload(
+                                        image: imageSelection,
+                                        path: "AllPosts/\(user.phoneNumber)/\(UUID().description)"
                                     )
                                     
-                                    DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                                    // Proceed only if the image upload was successful
+                                    if let uploadedImageUrl = storageManager.uploadedImageUrl {
+                                        // Update the post
+                                        try? await loginViewModel.updatePost(
+                                            post: PostsModel(
+                                                user: user,
+                                                timeStamp: Date(),
+                                                title: postViewModel.title,
+                                                description: postViewModel.description,
+                                                location: userLocation,
+                                                likes: 0,
+                                                comments: [],
+                                                imageUrl: uploadedImageUrl.debugDescription,
+                                                impressions: 0
+                                            )
+                                        )
+                                        
+                                        // Wait for a short delay before dismissing
+                                        try? await Task.sleep(nanoseconds: 1_000_000_000) // Sleep for 1 second (1_000_000_000 nanoseconds)
+                                        
                                         isPosting = false
                                         dismiss()
+                                    } else {
+                                        // Handle image upload failure
+                                        print("Image upload failed")
+                                        isPosting = false
                                     }
                                 }
                             }

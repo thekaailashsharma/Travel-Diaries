@@ -21,12 +21,15 @@ class LoginViewModel: ObservableObject {
     @Published var preferencesList: [String] = []
     @Published var travelQuestions: [MyTravelQuestions] = []
     
+    @Published var currentProfileState: ProfileTravelOptions = .about
+    
     
     private var cancellables = Set<AnyCancellable>()
     @Published private(set) var allUsers: [UserInfo] = []
     @Published private(set) var currentUser: UserInfo? = nil
     @Published private(set) var allUsersNames: [UserNames] = []
     @Published private(set) var allPosts: [PostsModel] = []
+    @Published private(set) var userPosts: [PostsModel] = []
     
     @AppStorage("sessionPhoneNumber") var sessionPhoneNumber: String = ""
     
@@ -78,9 +81,18 @@ class LoginViewModel: ObservableObject {
                 
             } receiveValue: {[weak self] posts in
                 self?.allPosts = posts
+                self?.getPostsByUser(phoneNumber: self?.sessionPhoneNumber ?? "")
             }
             .store(in: &cancellables)
 
+    }
+    
+    func getPostsByUser(phoneNumber: String) {
+        self.userPosts = self.allPosts.filter({ posts in
+            posts.user.phoneNumber == sessionPhoneNumber
+        })
+        print("allPosts are \(self.allPosts)")
+        print("userPosts are \(self.userPosts)")
     }
     
     func updateUser() async {
