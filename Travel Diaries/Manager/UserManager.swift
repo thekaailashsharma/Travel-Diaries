@@ -53,6 +53,7 @@ final class UserManager {
     
     private let userCollection: CollectionReference = Firestore.firestore().collection("userInfo")
     private let userNamesCollection: CollectionReference = Firestore.firestore().collection("usernames")
+    private let postsCollection: CollectionReference = Firestore.firestore().collection("allPosts")
     
     private func userDocument(phoneNumber: String) -> DocumentReference {
         userCollection.document(phoneNumber)
@@ -60,6 +61,14 @@ final class UserManager {
     
     private func userNameDocument(userName: String) -> DocumentReference {
         userNamesCollection.document(userName)
+    }
+    
+    private func postsDocument(phoneNumber: String) -> DocumentReference {
+        postsCollection.document(phoneNumber)
+    }
+    
+    func updatePost(post: PostsModel) async throws {
+        try? postsDocument(phoneNumber: post.timeStamp.description).setData(from: post)
     }
     
     
@@ -76,6 +85,10 @@ final class UserManager {
             try? await updateUserName(username: UserNames(userName: username))
         }
         
+    }
+    
+    func getAllPosts() -> AnyPublisher<[PostsModel], Error> {
+        getAllData(collection: postsCollection)
     }
     
     func getAllUsers() -> AnyPublisher<[UserInfo], Error> {

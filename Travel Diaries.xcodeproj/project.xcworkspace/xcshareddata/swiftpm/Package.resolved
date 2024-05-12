@@ -1,5 +1,5 @@
 {
-  "originHash" : "45bdfd70dfbbeb6f4b44db99cd0fc693c0c7941a5481b8f34e69fac0d0c931ce",
+  "originHash" : "7c2b723671ba877e8af8e55e85953ea2b2c967b42a6fb476bcf6ea9c27a2ce98",
   "pins" : [
     {
       "identity" : "abseil-cpp-binary",
@@ -125,6 +125,15 @@
       "state" : {
         "revision" : "9f0c76544701845ad98716f3f6a774a892152bcb",
         "version" : "1.26.0"
+      }
+    },
+    {
+      "identity" : "swiftui-tab-bar",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/zijievv/swiftui-tab-bar.git",
+      "state" : {
+        "revision" : "cd2b6b1ad81f5eb9985da9f154d61f1e411338ca",
+        "version" : "1.0.1"
       }
     }
   ],

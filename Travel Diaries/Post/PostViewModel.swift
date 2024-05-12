@@ -22,6 +22,7 @@ class PostViewModel: ObservableObject {
     @Published var title: String = ""
     @Published var description: String = ""
     @Published var selectedLocation: String = ""
+    @Published var location: Location? = nil
     @Published var selectedHashtag: String = ""
     
     func fetchLocation(for query: String) {

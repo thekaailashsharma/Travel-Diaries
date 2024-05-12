@@ -31,6 +31,8 @@ struct Travel_DiariesApp: App {
     
     var body: some Scene {
         WindowGroup {
+//            HomeScreen()
+//                .environmentObject(LoginViewModel())
             ContentsView()
                 .modelContainer(for: LocationSearchHistory.self)
             
