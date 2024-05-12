@@ -24,7 +24,12 @@ class LoginViewModel: ObservableObject {
     
     private var cancellables = Set<AnyCancellable>()
     @Published private(set) var allUsers: [UserInfo] = []
+    @Published private(set) var currentUser: UserInfo? = nil
     @Published private(set) var allUsersNames: [UserNames] = []
+    @Published private(set) var allPosts: [PostsModel] = []
+    
+    @AppStorage("sessionPhoneNumber") var sessionPhoneNumber: String = ""
+    
     
     func addDummyUsernames() async throws {
         try? await UserManager.shared.addDummyUserNames()
@@ -33,6 +38,7 @@ class LoginViewModel: ObservableObject {
     init() {
         getAllUserNames()
         getAllUsers()
+        getAllPosts()
     }
     
     func getAllUserNames() {
@@ -45,12 +51,33 @@ class LoginViewModel: ObservableObject {
             .store(in: &cancellables)
     }
     
+    func updatePost(post: PostsModel) async throws {
+        try? await UserManager.shared.updatePost(post: post)
+    }
+    
     func getAllUsers() {
         UserManager.shared.getAllUsers()
             .sink { _ in
                 
             } receiveValue: { [weak self] userInfo in
                 self?.allUsers = userInfo
+                self?.getCurrentUser(phoneNumber: self?.sessionPhoneNumber ?? "")
+                
+            }
+            .store(in: &cancellables)
+
+    }
+    
+    func getCurrentUser(phoneNumber: String) {
+        self.currentUser = self.allUsers.first(where: {$0.phoneNumber == phoneNumber})
+    }
+    
+    func getAllPosts() {
+        UserManager.shared.getAllPosts()
+            .sink { _ in
+                
+            } receiveValue: {[weak self] posts in
+                self?.allPosts = posts
             }
             .store(in: &cancellables)
 
@@ -99,10 +126,10 @@ class AuthManager : ObservableObject {
     
     public func getLoginStatus() {
         if Auth.auth().currentUser == nil {
-            print("Login Status = \(Auth.auth().currentUser)")
+            print("Login Status = \(String(describing: Auth.auth().currentUser))")
             isLoggedIn = true
         } else {
-            print("Login Status = \(Auth.auth().currentUser)")
+            print("Login Status = \(String(describing: Auth.auth().currentUser))")
             isLoggedIn = false
         }
     }

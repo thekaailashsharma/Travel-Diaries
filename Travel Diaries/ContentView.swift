@@ -15,6 +15,8 @@ struct ContentsView: View {
     @StateObject var authManager = AuthManager()
     @StateObject var storageManager = StorageManager()
     @StateObject var loginViewModel = LoginViewModel()
+    @StateObject var postViewModel = PostViewModel()
+    @StateObject var photoPickerViewController = PhotoPickerViewController()
     
 //    init(){
 //        for family in UIFont.familyNames {
@@ -202,6 +204,10 @@ struct ContentsView: View {
             })
         } else {
             HomeScreen()
+                .environmentObject(postViewModel)
+                .environmentObject(loginViewModel)
+                .environmentObject(photoPickerViewController)
+                .environmentObject(storageManager)
         }
     }
 }

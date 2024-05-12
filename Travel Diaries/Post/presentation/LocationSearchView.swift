@@ -68,6 +68,7 @@ struct LocationSearchView: View {
                                             address: address)
                                         )
                                         postViewModel.selectedLocation = address
+                                        postViewModel.location = Location(address: address, coordinate: Coordinate(latitude: location.position?.lat ?? 0.0, longitude: location.position?.lng ?? 0.0))
                                         isVisible = false
                                     }
                                 }
@@ -91,7 +92,7 @@ struct LocationSearchView: View {
                         .listRowSeparator(.hidden)
                         .listRowBackground(Color.black)
                     }
-                case .error(let aPIError):
+                case .error(let _):
                     VStack {
                         Spacer()
                         ContentUnavailableView(

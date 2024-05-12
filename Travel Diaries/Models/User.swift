@@ -22,7 +22,7 @@ struct UserInfo: Codable, Identifiable {
     var travelQuestions: [MyTravelQuestions] = []
 }
 
-struct MyTravelQuestions: Codable {
+struct MyTravelQuestions: Codable, Equatable {
     let question: String
     let answer: String
 }

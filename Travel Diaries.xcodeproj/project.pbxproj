@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4A3E288D2BF0BF4E00C6D2CC /* TabBarModule in Frameworks */ = {isa = PBXBuildFile; productRef = 4A3E288C2BF0BF4E00C6D2CC /* TabBarModule */; };
 		4A58DA552BE02208005C962D /* CountryDictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A58DA542BE02208005C962D /* CountryDictionary.swift */; };
 		4A58DA582BE024E8005C962D /* frosting.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4A58DA572BE024E8005C962D /* frosting.ttf */; };
 		4A58DA5C2BE02602005C962D /* CustomFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A58DA5B2BE02602005C962D /* CustomFont.swift */; };
@@ -26,7 +27,7 @@
 		4A9F9B172BEA661A00E5AAF0 /* GenderCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A9F9B162BEA661A00E5AAF0 /* GenderCard.swift */; };
 		4A9F9B192BEA8FC500E5AAF0 /* TravelPreferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A9F9B182BEA8FC500E5AAF0 /* TravelPreferences.swift */; };
 		4A9F9B1C2BEA90F100E5AAF0 /* TravelPreferncesCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A9F9B1B2BEA90F100E5AAF0 /* TravelPreferncesCard.swift */; };
-		4AB693EC2BEBE6A800B36118 /* PostScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AB693EB2BEBE6A800B36118 /* PostScreen.swift */; };
+		4AB693EC2BEBE6A800B36118 /* CreatePostScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AB693EB2BEBE6A800B36118 /* CreatePostScreen.swift */; };
 		4AB693F02BEBEC7B00B36118 /* HereSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AB693EF2BEBEC7B00B36118 /* HereSearch.swift */; };
 		4AB693F22BEBEE7100B36118 /* APIErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AB693F12BEBEE7100B36118 /* APIErrors.swift */; };
 		4AB693F52BEBEEAC00B36118 /* ApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AB693F42BEBEEAC00B36118 /* ApiManager.swift */; };
@@ -38,13 +39,18 @@
 		4AB694072BEC51FE00B36118 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 4AB694062BEC51FE00B36118 /* Lottie */; };
 		4AB694092BEC52CB00B36118 /* confetti.lottie in Resources */ = {isa = PBXBuildFile; fileRef = 4AB694082BEC52CA00B36118 /* confetti.lottie */; };
 		4AB6940C2BEC531800B36118 /* LottieAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AB6940B2BEC531800B36118 /* LottieAnimation.swift */; };
+		4AB7EA0F2BEF90FA00FFBF93 /* Glows&Shadows.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AB7EA0E2BEF90FA00FFBF93 /* Glows&Shadows.swift */; };
+		4AB7EA132BEF9C6600FFBF93 /* HomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AB7EA122BEF9C6600FFBF93 /* HomeScreen.swift */; };
+		4AB7EA152BEF9CA200FFBF93 /* PostsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AB7EA142BEF9CA200FFBF93 /* PostsScreen.swift */; };
+		4AB7EA182BEFAB3600FFBF93 /* PostsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AB7EA172BEFAB3600FFBF93 /* PostsModel.swift */; };
+		4AB7EA1A2BEFB59E00FFBF93 /* success.lottie in Resources */ = {isa = PBXBuildFile; fileRef = 4AB7EA192BEFB59E00FFBF93 /* success.lottie */; };
 		4AC133802BDD800D00FD1B58 /* Travel_DiariesApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AC1337F2BDD800D00FD1B58 /* Travel_DiariesApp.swift */; };
 		4AC133822BDD800D00FD1B58 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AC133812BDD800D00FD1B58 /* ContentView.swift */; };
 		4AC133842BDD800F00FD1B58 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4AC133832BDD800F00FD1B58 /* Assets.xcassets */; };
 		4AC133872BDD800F00FD1B58 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4AC133862BDD800F00FD1B58 /* Preview Assets.xcassets */; };
 		4AC133902BDD9B8B00FD1B58 /* avatar3.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 4AC1338F2BDD9B8B00FD1B58 /* avatar3.usdz */; };
 		4AC133922BDDA1E400FD1B58 /* AvatarViewer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AC133912BDDA1E400FD1B58 /* AvatarViewer.swift */; };
-		4AE978252BECD0AF002AA455 /* HomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE978242BECD0AF002AA455 /* HomeScreen.swift */; };
+		4AE978252BECD0AF002AA455 /* ProfileScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE978242BECD0AF002AA455 /* ProfileScreen.swift */; };
 		4AECCDF12BE7B21C00771DA6 /* PhotoPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AECCDF02BE7B21C00771DA6 /* PhotoPicker.swift */; };
 		4AF235532BE11AB6001AFF19 /* LoginProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AF235522BE11AB6001AFF19 /* LoginProfile.swift */; };
 		4AF235552BE1859F001AFF19 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 4AF235542BE1859F001AFF19 /* FirebaseFirestore */; };
@@ -70,7 +76,7 @@
 		4A9F9B162BEA661A00E5AAF0 /* GenderCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenderCard.swift; sourceTree = "<group>"; };
 		4A9F9B182BEA8FC500E5AAF0 /* TravelPreferences.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelPreferences.swift; sourceTree = "<group>"; };
 		4A9F9B1B2BEA90F100E5AAF0 /* TravelPreferncesCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelPreferncesCard.swift; sourceTree = "<group>"; };
-		4AB693EB2BEBE6A800B36118 /* PostScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostScreen.swift; sourceTree = "<group>"; };
+		4AB693EB2BEBE6A800B36118 /* CreatePostScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePostScreen.swift; sourceTree = "<group>"; };
 		4AB693EF2BEBEC7B00B36118 /* HereSearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HereSearch.swift; sourceTree = "<group>"; };
 		4AB693F12BEBEE7100B36118 /* APIErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIErrors.swift; sourceTree = "<group>"; };
 		4AB693F42BEBEEAC00B36118 /* ApiManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiManager.swift; sourceTree = "<group>"; };
@@ -81,6 +87,11 @@
 		4AB694032BEC35E700B36118 /* TravelQuestionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelQuestionsView.swift; sourceTree = "<group>"; };
 		4AB694082BEC52CA00B36118 /* confetti.lottie */ = {isa = PBXFileReference; lastKnownFileType = file; path = confetti.lottie; sourceTree = "<group>"; };
 		4AB6940B2BEC531800B36118 /* LottieAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieAnimation.swift; sourceTree = "<group>"; };
+		4AB7EA0E2BEF90FA00FFBF93 /* Glows&Shadows.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Glows&Shadows.swift"; sourceTree = "<group>"; };
+		4AB7EA122BEF9C6600FFBF93 /* HomeScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreen.swift; sourceTree = "<group>"; };
+		4AB7EA142BEF9CA200FFBF93 /* PostsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsScreen.swift; sourceTree = "<group>"; };
+		4AB7EA172BEFAB3600FFBF93 /* PostsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsModel.swift; sourceTree = "<group>"; };
+		4AB7EA192BEFB59E00FFBF93 /* success.lottie */ = {isa = PBXFileReference; lastKnownFileType = file; path = success.lottie; sourceTree = "<group>"; };
 		4AC1337C2BDD800D00FD1B58 /* Travel Diaries.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Travel Diaries.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4AC1337F2BDD800D00FD1B58 /* Travel_DiariesApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Travel_DiariesApp.swift; sourceTree = "<group>"; };
 		4AC133812BDD800D00FD1B58 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -88,7 +99,7 @@
 		4AC133862BDD800F00FD1B58 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		4AC1338F2BDD9B8B00FD1B58 /* avatar3.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = avatar3.usdz; sourceTree = "<group>"; };
 		4AC133912BDDA1E400FD1B58 /* AvatarViewer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarViewer.swift; sourceTree = "<group>"; };
-		4AE978242BECD0AF002AA455 /* HomeScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreen.swift; sourceTree = "<group>"; };
+		4AE978242BECD0AF002AA455 /* ProfileScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileScreen.swift; sourceTree = "<group>"; };
 		4AECCDF02BE7B21C00771DA6 /* PhotoPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoPicker.swift; sourceTree = "<group>"; };
 		4AF235522BE11AB6001AFF19 /* LoginProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginProfile.swift; sourceTree = "<group>"; };
 		4AF235592BE18640001AFF19 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -102,6 +113,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4A3E288D2BF0BF4E00C6D2CC /* TabBarModule in Frameworks */,
 				4A58DA6A2BE03727005C962D /* FirebaseAppCheck in Frameworks */,
 				4A58DA682BE03727005C962D /* FirebaseAnalyticsSwift in Frameworks */,
 				4AB694072BEC51FE00B36118 /* Lottie in Frameworks */,
@@ -136,6 +148,7 @@
 				4A9F9B0E2BEA233F00E5AAF0 /* MetadataPhotoPicker.swift */,
 				4AB693FF2BEC2B9600B36118 /* StringExt.swift */,
 				4AB6940B2BEC531800B36118 /* LottieAnimation.swift */,
+				4AB7EA0E2BEF90FA00FFBF93 /* Glows&Shadows.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -160,7 +173,6 @@
 		4A58DA702BE0394F005C962D /* presentation */ = {
 			isa = PBXGroup;
 			children = (
-				4AC133812BDD800D00FD1B58 /* ContentView.swift */,
 				4AF235522BE11AB6001AFF19 /* LoginProfile.swift */,
 				4AF235602BE19F45001AFF19 /* CompleteProfile.swift */,
 				4AECCDF02BE7B21C00771DA6 /* PhotoPicker.swift */,
@@ -209,7 +221,7 @@
 		4AB693F72BEBEF7800B36118 /* presentation */ = {
 			isa = PBXGroup;
 			children = (
-				4AB693EB2BEBE6A800B36118 /* PostScreen.swift */,
+				4AB693EB2BEBE6A800B36118 /* CreatePostScreen.swift */,
 				4AB693FD2BEC07D700B36118 /* LocationSearchView.swift */,
 			);
 			path = presentation;
@@ -223,11 +235,29 @@
 			path = SwiftData;
 			sourceTree = "<group>";
 		};
+		4AB7EA102BEF9BF300FFBF93 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				4AE978262BED124F002AA455 /* presentation */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		4AB7EA112BEF9C0300FFBF93 /* presentation */ = {
+			isa = PBXGroup;
+			children = (
+				4AB7EA122BEF9C6600FFBF93 /* HomeScreen.swift */,
+				4AB7EA142BEF9CA200FFBF93 /* PostsScreen.swift */,
+			);
+			path = presentation;
+			sourceTree = "<group>";
+		};
 		4AC133732BDD800C00FD1B58 = {
 			isa = PBXGroup;
 			children = (
 				4AC1338F2BDD9B8B00FD1B58 /* avatar3.usdz */,
 				4AB694082BEC52CA00B36118 /* confetti.lottie */,
+				4AB7EA192BEFB59E00FFBF93 /* success.lottie */,
 				4AC1337E2BDD800D00FD1B58 /* Travel Diaries */,
 				4AC1337D2BDD800D00FD1B58 /* Products */,
 				4A58DA622BE036F0005C962D /* Frameworks */,
@@ -247,6 +277,7 @@
 			children = (
 				4A58DA6E2BE038F2005C962D /* GoogleService-Info.plist */,
 				4A58DA592BE0256E005C962D /* Travel-Diaries-Info.plist */,
+				4AB7EA102BEF9BF300FFBF93 /* Profile */,
 				4AE978232BECD09F002AA455 /* Home */,
 				4AB693F62BEBEF6600B36118 /* Post */,
 				4AB693ED2BEBEC4500B36118 /* ApiManager */,
@@ -256,6 +287,7 @@
 				4A58DA5A2BE025EA005C962D /* Utils */,
 				4A58DA6D2BE0374D005C962D /* Login */,
 				4AC1337F2BDD800D00FD1B58 /* Travel_DiariesApp.swift */,
+				4AC133812BDD800D00FD1B58 /* ContentView.swift */,
 				4AC133912BDDA1E400FD1B58 /* AvatarViewer.swift */,
 				4AC133832BDD800F00FD1B58 /* Assets.xcassets */,
 				4AC133852BDD800F00FD1B58 /* Preview Content */,
@@ -274,9 +306,17 @@
 		4AE978232BECD09F002AA455 /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				4AE978242BECD0AF002AA455 /* HomeScreen.swift */,
+				4AB7EA112BEF9C0300FFBF93 /* presentation */,
 			);
 			path = Home;
+			sourceTree = "<group>";
+		};
+		4AE978262BED124F002AA455 /* presentation */ = {
+			isa = PBXGroup;
+			children = (
+				4AE978242BECD0AF002AA455 /* ProfileScreen.swift */,
+			);
+			path = presentation;
 			sourceTree = "<group>";
 		};
 		4AF235582BE1862A001AFF19 /* Models */ = {
@@ -284,6 +324,7 @@
 			children = (
 				4AB693FA2BEBFDFC00B36118 /* SwiftData */,
 				4AF235592BE18640001AFF19 /* User.swift */,
+				4AB7EA172BEFAB3600FFBF93 /* PostsModel.swift */,
 				4AB693F12BEBEE7100B36118 /* APIErrors.swift */,
 			);
 			path = Models;
@@ -324,6 +365,7 @@
 				4AF235562BE1859F001AFF19 /* FirebaseFirestoreSwift */,
 				4A9F9B142BEA547700E5AAF0 /* FirebaseStorage */,
 				4AB694062BEC51FE00B36118 /* Lottie */,
+				4A3E288C2BF0BF4E00C6D2CC /* TabBarModule */,
 			);
 			productName = "Travel Diaries";
 			productReference = 4AC1337C2BDD800D00FD1B58 /* Travel Diaries.app */;
@@ -356,6 +398,7 @@
 			packageReferences = (
 				4A58DA612BE036D0005C962D /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 				4AB694052BEC51FD00B36118 /* XCRemoteSwiftPackageReference "lottie-ios" */,
+				4A3E288B2BF0BF4E00C6D2CC /* XCRemoteSwiftPackageReference "swiftui-tab-bar" */,
 			);
 			productRefGroup = 4AC1337D2BDD800D00FD1B58 /* Products */;
 			projectDirPath = "";
@@ -377,6 +420,7 @@
 				4AC133872BDD800F00FD1B58 /* Preview Assets.xcassets in Resources */,
 				4AC133902BDD9B8B00FD1B58 /* avatar3.usdz in Resources */,
 				4AC133842BDD800F00FD1B58 /* Assets.xcassets in Resources */,
+				4AB7EA1A2BEFB59E00FFBF93 /* success.lottie in Resources */,
 				4A58DA5E2BE02640005C962D /* Poppins-Regular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -391,7 +435,7 @@
 				4AB693F92BEBEF9200B36118 /* PostViewModel.swift in Sources */,
 				4AB693F02BEBEC7B00B36118 /* HereSearch.swift in Sources */,
 				4A9F9B112BEA351D00E5AAF0 /* PermissionsCard.swift in Sources */,
-				4AB693EC2BEBE6A800B36118 /* PostScreen.swift in Sources */,
+				4AB693EC2BEBE6A800B36118 /* CreatePostScreen.swift in Sources */,
 				4AB693F22BEBEE7100B36118 /* APIErrors.swift in Sources */,
 				4AF2355C2BE18D17001AFF19 /* UserManager.swift in Sources */,
 				4A9F9B1C2BEA90F100E5AAF0 /* TravelPreferncesCard.swift in Sources */,
@@ -400,6 +444,7 @@
 				4AF235532BE11AB6001AFF19 /* LoginProfile.swift in Sources */,
 				4A9F9B172BEA661A00E5AAF0 /* GenderCard.swift in Sources */,
 				4AB693FC2BEBFE1700B36118 /* LocationSearchHistory.swift in Sources */,
+				4AB7EA152BEF9CA200FFBF93 /* PostsScreen.swift in Sources */,
 				4A9F9B192BEA8FC500E5AAF0 /* TravelPreferences.swift in Sources */,
 				4AB694042BEC35E700B36118 /* TravelQuestionsView.swift in Sources */,
 				4A58DA5C2BE02602005C962D /* CustomFont.swift in Sources */,
@@ -410,11 +455,14 @@
 				4AF2355A2BE18640001AFF19 /* User.swift in Sources */,
 				4AECCDF12BE7B21C00771DA6 /* PhotoPicker.swift in Sources */,
 				4AC133822BDD800D00FD1B58 /* ContentView.swift in Sources */,
+				4AB7EA182BEFAB3600FFBF93 /* PostsModel.swift in Sources */,
 				4AC133802BDD800D00FD1B58 /* Travel_DiariesApp.swift in Sources */,
 				4AB694002BEC2B9600B36118 /* StringExt.swift in Sources */,
 				4AB693F52BEBEEAC00B36118 /* ApiManager.swift in Sources */,
+				4AB7EA0F2BEF90FA00FFBF93 /* Glows&Shadows.swift in Sources */,
+				4AB7EA132BEF9C6600FFBF93 /* HomeScreen.swift in Sources */,
 				4AB6940C2BEC531800B36118 /* LottieAnimation.swift in Sources */,
-				4AE978252BECD0AF002AA455 /* HomeScreen.swift in Sources */,
+				4AE978252BECD0AF002AA455 /* ProfileScreen.swift in Sources */,
 				4AC133922BDDA1E400FD1B58 /* AvatarViewer.swift in Sources */,
 				4A9F9B132BEA546200E5AAF0 /* StorageManager.swift in Sources */,
 				4AB693FE2BEC07D700B36118 /* LocationSearchView.swift in Sources */,
@@ -631,6 +679,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		4A3E288B2BF0BF4E00C6D2CC /* XCRemoteSwiftPackageReference "swiftui-tab-bar" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/zijievv/swiftui-tab-bar.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.1;
+			};
+		};
 		4A58DA612BE036D0005C962D /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
@@ -650,6 +706,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		4A3E288C2BF0BF4E00C6D2CC /* TabBarModule */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4A3E288B2BF0BF4E00C6D2CC /* XCRemoteSwiftPackageReference "swiftui-tab-bar" */;
+			productName = TabBarModule;
+		};
 		4A58DA632BE036F0005C962D /* FirebaseAuth */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 4A58DA612BE036D0005C962D /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
