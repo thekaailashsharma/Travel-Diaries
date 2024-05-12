@@ -9,7 +9,7 @@ import Foundation
 
 import Foundation
 
-struct PostsModel: Identifiable, Codable {
+struct PostsModel: Identifiable, Codable, Equatable {
     var id: UUID = .init()
     var user: UserInfo
     var timeStamp: Date
@@ -23,17 +23,17 @@ struct PostsModel: Identifiable, Codable {
     
 }
 
-struct Location: Codable {
+struct Location: Codable, Equatable {
     let address: String
     let coordinate: Coordinate?
 }
 
-struct Coordinate: Codable {
+struct Coordinate: Codable, Equatable {
     let latitude: Double
     let longitude: Double
 }
 
-struct Comment: Identifiable, Codable {
+struct Comment: Identifiable, Codable, Equatable {
     let id: String
     let userId: String
     let userName: String

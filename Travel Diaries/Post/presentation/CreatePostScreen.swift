@@ -14,7 +14,7 @@ struct CreatePostScreen: View {
     
     @EnvironmentObject var postViewModel: PostViewModel
     @EnvironmentObject var loginViewModel: LoginViewModel
-    @EnvironmentObject var photoPicker: PhotoPickerViewController
+    @StateObject var photoPicker = PhotoPickerViewController()
     @EnvironmentObject var storageManager: StorageManager
     
     @FocusState var isKeyBoardActive: Bool
@@ -275,10 +275,10 @@ struct CreatePostScreen: View {
            HashTagsCard(isVisible: $isHashtagsOpen)
                 .environmentObject(postViewModel)
         })
-        .fullScreenCover(isPresented: $photoPicker.notAccessGranted) {
-            PermissionsCard()
-                .environmentObject(photoPicker)
-        }
+//        .fullScreenCover(isPresented: $photoPicker.notAccessGranted) {
+//            PermissionsCard()
+//                .environmentObject(photoPicker)
+//        }
         .ignoresSafeArea()
     }
 }

@@ -11,7 +11,7 @@ struct UserNames: Codable {
     let userName: String
 }
 
-struct UserInfo: Codable, Identifiable {
+struct UserInfo: Codable, Identifiable, Equatable {
     let id: UUID
     let phoneNumber: String
     let userName: String
@@ -27,7 +27,7 @@ struct MyTravelQuestions: Hashable, Codable, Equatable {
     let answer: String
 }
 
-enum Genders: String, Codable {
+enum Genders: String, Codable, Equatable {
     case male = "Male"
     case female = "Female"
     case other = "Other"

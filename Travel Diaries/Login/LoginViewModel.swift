@@ -28,7 +28,7 @@ class LoginViewModel: ObservableObject {
     @Published private(set) var allUsers: [UserInfo] = []
     @Published private(set) var currentUser: UserInfo? = nil
     @Published private(set) var allUsersNames: [UserNames] = []
-    @Published private(set) var allPosts: [PostsModel] = []
+    @Published var allPosts: [PostsModel] = []
     @Published private(set) var userPosts: [PostsModel] = []
     
     @AppStorage("sessionPhoneNumber") var sessionPhoneNumber: String = ""

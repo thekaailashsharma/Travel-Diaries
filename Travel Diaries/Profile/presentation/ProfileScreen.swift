@@ -294,36 +294,31 @@ struct UserPosts: View {
         ScrollView {
             LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible()), GridItem(.flexible())], spacing: 25) {
                 ForEach(posts, id: \.id) { post in
-                    ZStack {
-                        AsyncImage(url: URL(string: post.imageUrl ?? "")) { image in
-                            image
-                                .resizable()
-                                .clipShape(RoundedRectangle(cornerRadius: 10))
-                            
-                        } placeholder: {
-                            ProgressView()
-                                .foregroundStyle(Color.customColor(.green))
-                        }
+                    NavigationLink {
                         
-                        VStack {
-                            HStack {
-                                Text(post.title)
-                                    .font(.customFont(.poppins, size: 14))
-                                    .foregroundStyle(Color.customColor(.white))
-                                    .padding(.bottom)
+                    } label: {
+                        ZStack {
+                            AsyncImage(url: URL(string: post.imageUrl ?? "")) { image in
+                                image
+                                    .resizable()
+                                    .clipShape(RoundedRectangle(cornerRadius: 10))
+                                
+                            } placeholder: {
+                                ProgressView()
+                                    .foregroundStyle(Color.customColor(.green))
                             }
-                            .padding(.horizontal)
                             
-                            Spacer()
+                        }
+                        .frame(width: 100, height: 100)
+                        .border(.white)
+                        .clipShape(RoundedRectangle(cornerRadius: 2))
+                        .overlay {
+                            RoundedRectangle(cornerRadius: 2)
+                                .stroke(Color.customColor(.white).opacity(0.6))
                         }
                     }
-                    .frame(width: 100, height: 100)
-                    .border(.white)
-                    .clipShape(RoundedRectangle(cornerRadius: 10))
-                    .overlay {
-                        RoundedRectangle(cornerRadius: 10)
-                            .stroke(Color.customColor(.white).opacity(0.6))
-                    }
+
+                   
                 }
             }
         }

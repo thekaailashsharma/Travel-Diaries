@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		4A3E288D2BF0BF4E00C6D2CC /* TabBarModule in Frameworks */ = {isa = PBXBuildFile; productRef = 4A3E288C2BF0BF4E00C6D2CC /* TabBarModule */; };
+		4A3E288F2BF0EBF000C6D2CC /* DetailedPostsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A3E288E2BF0EBF000C6D2CC /* DetailedPostsScreen.swift */; };
 		4A58DA552BE02208005C962D /* CountryDictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A58DA542BE02208005C962D /* CountryDictionary.swift */; };
 		4A58DA582BE024E8005C962D /* frosting.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4A58DA572BE024E8005C962D /* frosting.ttf */; };
 		4A58DA5C2BE02602005C962D /* CustomFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A58DA5B2BE02602005C962D /* CustomFont.swift */; };
@@ -62,6 +63,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4A3E288E2BF0EBF000C6D2CC /* DetailedPostsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedPostsScreen.swift; sourceTree = "<group>"; };
 		4A58DA542BE02208005C962D /* CountryDictionary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryDictionary.swift; sourceTree = "<group>"; };
 		4A58DA572BE024E8005C962D /* frosting.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = frosting.ttf; sourceTree = "<group>"; };
 		4A58DA592BE0256E005C962D /* Travel-Diaries-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Travel-Diaries-Info.plist"; sourceTree = SOURCE_ROOT; };
@@ -315,6 +317,7 @@
 			isa = PBXGroup;
 			children = (
 				4AE978242BECD0AF002AA455 /* ProfileScreen.swift */,
+				4A3E288E2BF0EBF000C6D2CC /* DetailedPostsScreen.swift */,
 			);
 			path = presentation;
 			sourceTree = "<group>";
@@ -434,6 +437,7 @@
 			files = (
 				4AB693F92BEBEF9200B36118 /* PostViewModel.swift in Sources */,
 				4AB693F02BEBEC7B00B36118 /* HereSearch.swift in Sources */,
+				4A3E288F2BF0EBF000C6D2CC /* DetailedPostsScreen.swift in Sources */,
 				4A9F9B112BEA351D00E5AAF0 /* PermissionsCard.swift in Sources */,
 				4AB693EC2BEBE6A800B36118 /* CreatePostScreen.swift in Sources */,
 				4AB693F22BEBEE7100B36118 /* APIErrors.swift in Sources */,

@@ -12,7 +12,7 @@ struct HomeScreen: View {
     
     @EnvironmentObject var postViewModel: PostViewModel
     @EnvironmentObject var loginViewModel: LoginViewModel
-    @StateObject var photoPickerViewController = PhotoPickerViewController()
+    @EnvironmentObject var photoPickerViewController: PhotoPickerViewController
     
     @State var tabSelection: Int = 0
     @State var isPost: Bool = false
@@ -21,6 +21,7 @@ struct HomeScreen: View {
         
         TabBar(selection: $tabSelection, visibility: .constant(.automatic)) {
             PostsScreen()
+                .environmentObject(loginViewModel)
                 .tabItem(0) {
                     Image(systemName: tabSelection == 0 ? "house.fill" : "house")
                         .font(.title3)
