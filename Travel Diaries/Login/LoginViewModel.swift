@@ -22,6 +22,7 @@ class LoginViewModel: ObservableObject {
     @Published var travelQuestions: [MyTravelQuestions] = []
     
     @Published var currentProfileState: ProfileTravelOptions = .about
+    @Published var currentComment: String = ""
     
     
     private var cancellables = Set<AnyCancellable>()

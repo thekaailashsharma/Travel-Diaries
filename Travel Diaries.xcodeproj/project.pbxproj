@@ -250,6 +250,7 @@
 			children = (
 				4AB7EA122BEF9C6600FFBF93 /* HomeScreen.swift */,
 				4AB7EA142BEF9CA200FFBF93 /* PostsScreen.swift */,
+				4A3E288E2BF0EBF000C6D2CC /* DetailedPostsScreen.swift */,
 			);
 			path = presentation;
 			sourceTree = "<group>";
@@ -317,7 +318,6 @@
 			isa = PBXGroup;
 			children = (
 				4AE978242BECD0AF002AA455 /* ProfileScreen.swift */,
-				4A3E288E2BF0EBF000C6D2CC /* DetailedPostsScreen.swift */,
 			);
 			path = presentation;
 			sourceTree = "<group>";

@@ -28,15 +28,23 @@ struct PostsScreen: View {
     
     @EnvironmentObject var loginViewModel: LoginViewModel
     
-    
+    init() {
+        initNavigation(navBarAppearence: UINavigationBarAppearance(), bgColor: .black, fgColor: .white)
+    }
     
     var body: some View {
         NavigationStack {
             ScrollView(showsIndicators: false) {
                 ForEach(loginViewModel.allPosts, id: \.id) { post in
-                    CardsView(post: post) {
-                        
+                    NavigationLink {
+                        DetailedPostsScreen(post: post)
+                    } label: {
+                        CardsView(post: post) {
+                            
+                        }
                     }
+
+                    
                 }
             }
             .navigationTitle("Posts")

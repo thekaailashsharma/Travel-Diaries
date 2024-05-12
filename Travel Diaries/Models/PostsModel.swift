@@ -35,8 +35,7 @@ struct Coordinate: Codable, Equatable {
 
 struct Comment: Identifiable, Codable, Equatable {
     let id: String
-    let userId: String
-    let userName: String
+    let user: UserInfo
     let timestamp: Date
     let content: String
     var replies: [Comment]
