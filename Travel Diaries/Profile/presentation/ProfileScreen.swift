@@ -153,6 +153,7 @@ struct ProfileScreen: View {
             .onAppear {
                 loginViewModel.getAllPosts()
             }
+            .navigationTitle("Profile")
         }
     }
 }
@@ -292,10 +293,10 @@ struct UserPosts: View {
     var body: some View {
         //        List {
         ScrollView {
-            LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible()), GridItem(.flexible())], spacing: 25) {
+            LazyVGrid(columns: [GridItem(.flexible(), spacing: 0), GridItem(.flexible(), spacing: 0), GridItem(.flexible(), spacing: 0)], spacing: 0) {
                 ForEach(posts, id: \.id) { post in
                     NavigationLink {
-                        
+                        DetailedPostsScreen(post: post)
                     } label: {
                         ZStack {
                             AsyncImage(url: URL(string: post.imageUrl ?? "")) { image in

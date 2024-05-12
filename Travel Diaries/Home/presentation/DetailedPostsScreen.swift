@@ -155,8 +155,12 @@ struct DetailedPostsScreen: View {
                         
                     }
                     else {
-                        ContentUnavailableView("No Comments yet", systemImage: "message.fill")
-                            .frame(height: 100)
+                        
+                        ContentUnavailableView("No Comments Yet", systemImage: "person.2.crop.square.stack.fill")
+                            .foregroundStyle(.white)
+                            .background(Color.black)
+                            .padding(.bottom, 100)
+                        
                     }
                     
                 }
